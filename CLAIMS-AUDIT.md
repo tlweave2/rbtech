@@ -31,8 +31,7 @@
 | Land already zoned industrial, not agricultural land or land that could be used for housing | Zoning; SCF 04 |
 | One of 37 existing tenants; modular, medium-sized; not a mega data center | Scale |
 | Modern computing facility built to house high-performance computing, reusing site resources rather than raw land | 03 · The Project |
-| $10M+/yr new property tax revenue for Stanislaus County & Riverbank | Expected Local Impact |
-| $5M+/yr of that funding local schools | Expected Local Impact |
+| Increased (new) property tax revenue for Stanislaus County & Riverbank, funding local schools | Expected Local Impact; SCF 05 |
 | Hundreds of construction jobs, plus lasting local service jobs | Expected Local Impact |
 | Property tax funds schools, local governments, fire protection, libraries, and parks | SCF 05 |
 | Seven commitment titles, and the sentence introducing them | Responsible Development Commitments |
@@ -66,6 +65,9 @@ Preview D is rebuilt from `design-source/Riverbank_TC_Redesign_Homepage_export.h
 
 ## Illustrations
 The setback and cooling-loop drawings are labeled "Simplified illustration, not to scale" and, where they show a layout, "not the actual site layout". Where things sit in them (for example, chillers drawn beside the building) is illustrative only.
+
+## Removed at the client's request
+- The dollar figures for property tax ($10M+/yr, and the $5M+/yr for schools that is described as part of it). The previews now say "increased property tax revenue" with no amount.
 
 ## Left out on purpose
 The original also says "can supply excess power back to the grid", "potential future power produced onsite", and "equivalent to the annual use of two homes". The previews leave these out. Omitting a claim can't add one, and "two homes" conflicts with "a few homes" elsewhere on the original.

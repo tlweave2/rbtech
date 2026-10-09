@@ -140,7 +140,7 @@ p { margin: 0 0 1em; }
 .benefits { background: #0b2842; color: #eef3f7; }
 .benefits .eyebrow { color: var(--sand); }
 .benefits h2 { color: #fff; }
-.stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin: 2rem 0 1rem; }
+.stat-row { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin: 2rem 0 1rem; }
 .stat { border-top: 2px solid rgba(255, 255, 255, .35); padding-top: 16px; }
 .stat .num { display: block; font: 800 clamp(2.2rem, 5vw, 3.2rem)/1 var(--serif); color: var(--sand); margin-bottom: 8px; }
 .stat .lbl { font-size: 1rem; }

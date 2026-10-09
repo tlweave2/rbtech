@@ -124,6 +124,8 @@ h1, h2, h3 { margin: 0; text-wrap: balance; }
 .gains .n { color: var(--river); }
 @media (max-width: 760px) { .zeros { grid-template-columns: 1fr; } .zeros > div + div { padding-left: 0; border-left: 0; } }
 .zeros + .zeros { margin-top: 40px; }
+.money .zeros { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (max-width: 760px) { .money .zeros { grid-template-columns: 1fr; } }
 
 /* compare */
 .versus { overflow-x: auto; }
@@ -432,8 +434,7 @@ footer b { color: var(--on-band); font: 800 1.2rem var(--display); text-transfor
       <p>Meaningful, sustained property tax revenue that funds schools, local governments, fire protection, libraries, and parks.</p>
     </div>
     <div class="zeros">
-      <div><span class="n">$10M+</span><span class="u">Property tax per year</span><p>New property tax revenue for Stanislaus County &amp; Riverbank.</p></div>
-      <div><span class="n">$5M+</span><span class="u">To local schools per year</span><p>Of that, funding local schools every year.</p></div>
+      <div><span class="n">Increased</span><span class="u">Property tax revenue</span><p>New property tax revenue for Stanislaus County &amp; Riverbank, funding local schools.</p></div>
       <div><span class="n">100s</span><span class="u">Construction jobs</span><p>Hundreds of construction jobs, plus lasting local service jobs.</p></div>
     </div>
   </div>
