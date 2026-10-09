@@ -8,25 +8,25 @@
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Inter:wght@400;500;600;700&display=swap">
 <style>
 :root {
-  --bg: #f5f3ee; --card: #fff; --ink: #1a1f1c; --ink-2: #5b635e; --rule: #e1ddd3; --accent: #1f5f5b;
+  --bg: #f4f8fb; --card: #fff; --ink: #0b2842; --ink-2: #516779; --rule: #d6e1ea; --accent: #3e7a1c;
   --sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
 }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
-  --bg: #121513; --card: #1b1f1c; --ink: #eceeea; --ink-2: #a3aaa5; --rule: #2c312d; --accent: #7cc4bd; color-scheme: dark;
+  --bg: #0a1a2b; --card: #13293f; --ink: #e9f0f6; --ink-2: #a3b6c6; --rule: #22394f; --accent: #8cc66a; color-scheme: dark;
 } }
 :root[data-theme="dark"] {
-  --bg: #121513; --card: #1b1f1c; --ink: #eceeea; --ink-2: #a3aaa5; --rule: #2c312d; --accent: #7cc4bd; color-scheme: dark;
+  --bg: #0a1a2b; --card: #13293f; --ink: #e9f0f6; --ink-2: #a3b6c6; --rule: #22394f; --accent: #8cc66a; color-scheme: dark;
 }
 *, *::before, *::after { box-sizing: border-box; }
 body { margin: 0; background: var(--bg); color: var(--ink); font: 400 16px/1.6 var(--sans); -webkit-font-smoothing: antialiased; }
 a { color: var(--accent); }
 .wrap { width: min(1200px, 100% - 32px); margin-inline: auto; }
 header { padding: clamp(40px, 7vw, 80px) 0 32px; }
-.tag { font-size: .78rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); margin: 0 0 12px; }
-h1 { font-size: clamp(2rem, 4.5vw, 3rem); line-height: 1.08; letter-spacing: -.02em; margin: 0 0 14px; }
+.tag { font-family: "Montserrat", sans-serif; font-size: .76rem; font-weight: 700; letter-spacing: .24em; text-transform: uppercase; color: var(--accent); margin: 0 0 12px; }
+h1 { font: 800 clamp(2rem, 4.5vw, 3rem)/1.08 "Montserrat", sans-serif; letter-spacing: -.02em; margin: 0 0 14px; }
 .lede { max-width: 64ch; color: var(--ink-2); font-size: 1.08rem; margin: 0; }
 .cur { display: inline-flex; gap: 6px; align-items: center; margin-top: 18px; font-size: .92rem; color: var(--ink-2); }
 .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; padding-bottom: 40px; }
@@ -38,7 +38,7 @@ h1 { font-size: clamp(2rem, 4.5vw, 3rem); line-height: 1.08; letter-spacing: -.0
 .shot img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
 .body { padding: 20px 22px 22px; display: flex; flex-direction: column; flex: 1; }
 .letter { display: inline-grid; place-items: center; width: 30px; height: 30px; border-radius: 8px; font-weight: 700; color: #fff; margin-right: 10px; font-size: .95rem; }
-h2 { display: flex; align-items: center; font-size: 1.2rem; margin: 0 0 4px; }
+h2 { display: flex; align-items: center; font: 800 1.2rem/1.2 "Montserrat", sans-serif; margin: 0 0 4px; }
 .feel { font-size: .85rem; font-weight: 600; color: var(--ink-2); margin: 0 0 12px; }
 .body p.desc { color: var(--ink-2); font-size: .95rem; margin: 0 0 14px; }
 .swatches { display: flex; gap: 6px; margin: 0 0 14px; }
@@ -62,7 +62,7 @@ h2 { display: flex; align-items: center; font-size: 1.2rem; margin: 0 0 4px; }
   <p class="tag">riverbanktc.com redesign</p>
   <h1>Four directions for the new site</h1>
   <p class="lede">Each preview is a full homepage with the same content, all taken from the current riverbanktc.com: plain answers on water, power, and noise, the Sustainable Computing Facility standard, the seven commitments, and the real site and community photos. No new claims were added. Only the look and layout change. Open each one, then pick the direction to build out.</p>
-  <p class="cur">Compare with the current site: <a href="https://www.riverbanktc.com/" target="_blank" rel="noopener">riverbanktc.com &nearr;</a></p>
+  <p class="cur">All four use the RTC brand colors and type from the social media flyer. Compare with the current site: <a href="https://www.riverbanktc.com/" target="_blank" rel="noopener">riverbanktc.com &nearr;</a></p>
 </header>
 
 <main class="wrap">
@@ -70,12 +70,12 @@ h2 { display: flex; align-items: center; font-size: 1.2rem; margin: 0 0 4px; }
     <article class="card">
       <a class="shot" href="previews/a-civic/"><img src="previews/thumbs/a-civic.jpg" alt="Screenshot of preview A, Civic" width="960" height="600"></a>
       <div class="body">
-        <h2><span class="letter" style="background:#1f5f5b">A</span>Civic</h2>
+        <h2><span class="letter" style="background:#0b2842">A</span>Civic</h2>
         <p class="feel">Calm, trustworthy, public-agency feel</p>
-        <div class="swatches" aria-hidden="true"><i style="background:#1f5f5b"></i><i style="background:#e8c98f"></i><i style="background:#b5562f"></i><i style="background:#fbf8f2"></i></div>
+        <div class="swatches" aria-hidden="true"><i style="background:#0b2842"></i><i style="background:#1586c2"></i><i style="background:#4c9225"></i><i style="background:#f4f8fb"></i></div>
         <p class="desc">Reads like a well-run city information page, with soft cards that answer the four questions neighbors ask first.</p>
         <ul class="points">
-          <li>Serif headlines (Fraunces) with Inter body text</li>
+          <li>Soft cards, light layout</li>
           <li>"Questions neighbors ask first" cards</li>
           <li>Simple setback illustration (200+ ft)</li>
         </ul>
@@ -86,12 +86,12 @@ h2 { display: flex; align-items: center; font-size: 1.2rem; margin: 0 0 4px; }
     <article class="card">
       <a class="shot" href="previews/b-industrial/"><img src="previews/thumbs/b-industrial.jpg" alt="Screenshot of preview B, Industrial" width="960" height="600"></a>
       <div class="body">
-        <h2><span class="letter" style="background:#141d23">B</span>Industrial</h2>
+        <h2><span class="letter" style="background:#0b2842">B</span>Industrial</h2>
         <p class="feel">Bold, technical, spec-sheet feel</p>
-        <div class="swatches" aria-hidden="true"><i style="background:#141d23"></i><i style="background:#f2c21b"></i><i style="background:#24639f"></i><i style="background:#f3f4f0"></i></div>
-        <p class="desc">Industrial look with technical linework and safety-yellow markings. The hero is a simplified cutaway illustration of the facility.</p>
+        <div class="swatches" aria-hidden="true"><i style="background:#0b2842"></i><i style="background:#1586c2"></i><i style="background:#4c9225"></i><i style="background:#f4f8fb"></i></div>
+        <p class="desc">Technical look with a cutaway drawing and ruled lists. The hero is a simplified cutaway illustration of the facility.</p>
         <ul class="points">
-          <li>Condensed display type, mono labels</li>
+          <li>Dark navy bands, technical labels</li>
           <li>Hero cutaway illustration</li>
           <li>Ruled ledgers instead of cards</li>
         </ul>
@@ -102,12 +102,12 @@ h2 { display: flex; align-items: center; font-size: 1.2rem; margin: 0 0 4px; }
     <article class="card">
       <a class="shot" href="previews/c-hometown/"><img src="previews/thumbs/c-hometown.jpg" alt="Screenshot of preview C, Hometown" width="960" height="600"></a>
       <div class="body">
-        <h2><span class="letter" style="background:#e08a3c">C</span>Hometown</h2>
+        <h2><span class="letter" style="background:#0b2842">C</span>Hometown</h2>
         <p class="feel">Warm, photo-led, neighborly feel</p>
-        <div class="swatches" aria-hidden="true"><i style="background:#2c432e"></i><i style="background:#e08a3c"></i><i style="background:#2f6f8f"></i><i style="background:#faf6ee"></i></div>
+        <div class="swatches" aria-hidden="true"><i style="background:#0b2842"></i><i style="background:#1586c2"></i><i style="background:#4c9225"></i><i style="background:#f4f8fb"></i></div>
         <p class="desc">Opens with a full-bleed aerial of the complex, follows with large-type numbers, and ends on a community photo mosaic.</p>
         <ul class="points">
-          <li>DM Serif Display with DM Sans body text</li>
+          <li>Full-width aerial photo hero</li>
           <li>Closed-loop cooling illustration</li>
           <li>Quick-answer bar under the hero</li>
         </ul>
@@ -117,12 +117,12 @@ h2 { display: flex; align-items: center; font-size: 1.2rem; margin: 0 0 4px; }
     <article class="card">
       <a class="shot" href="previews/d-straight-answers/"><img src="previews/thumbs/d-straight-answers.jpg" alt="Screenshot of preview D, Straight Answers" width="960" height="600"></a>
       <div class="body">
-        <h2><span class="letter" style="background:#1d5c73">D</span>Straight Answers</h2>
+        <h2><span class="letter" style="background:#0b2842">D</span>Straight Answers</h2>
         <p class="feel">Clear, question-led, practical feel</p>
-        <div class="swatches" aria-hidden="true"><i style="background:#10272b"></i><i style="background:#1d5c73"></i><i style="background:#e8a93a"></i><i style="background:#f4f5f1"></i></div>
+        <div class="swatches" aria-hidden="true"><i style="background:#0b2842"></i><i style="background:#1586c2"></i><i style="background:#4c9225"></i><i style="background:#f4f8fb"></i></div>
         <p class="desc">Built from the uploaded homepage design. Six question cards (water, bills, noise, air, land, size) come right after the hero, followed by a dark "how it works" band.</p>
         <ul class="points">
-          <li>Archivo condensed headlines with Public Sans</li>
+          <li>Based on the uploaded homepage design</li>
           <li>Six "Your questions" answer cards</li>
           <li>Stats strip under the hero</li>
         </ul>

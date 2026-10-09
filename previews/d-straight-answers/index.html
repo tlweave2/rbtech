@@ -7,34 +7,32 @@
 <meta name="description" content="Riverbank Technology Center: a modular, medium-sized computing facility inside existing buildings at the Riverbank Industrial Complex. No Riverbank city water, no strain on the local grid, no turbines or generators running.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,600..800&family=Public+Sans:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap">
 <style>
 /* Layout: "straight answers". Question-led cards, dark how-it-works band, sun-yellow accents. Based on the uploaded homepage design. */
 :root {
-  --bg: #f4f5f1;
+  --bg: #f4f8fb;
   --card: #ffffff;
-  --soft: #e6eae7;
-  --ink: #10272b;
-  --ink-2: #3b4b4e;
-  --ink-3: #4a5a5d;
-  --rule: #dce1dd;
-  --teal: #1d5c73;
-  --sun: #e8a93a;
-  --band: #10272b;
-  --band-card: #163437;
-  --band-rule: #2a4b4f;
-  --on-band: #eef2ef;
-  --on-band-2: #a9bbb8;
-  --display: "Archivo", "Arial Narrow", sans-serif;
-  --body: "Public Sans", system-ui, -apple-system, sans-serif;
+  --soft: #e6eef4;
+  --ink: #0b2842;
+  --ink-2: #3d5468;
+  --ink-3: #516779;
+  --rule: #d6e1ea;
+  --teal: #0473b8;
+  --sun: #6ca13e;
+  --band: #0b2842;
+  --band-card: #12365a;
+  --band-rule: #24486b;
+  --on-band: #eef3f7;
+  --on-band-2: #a9bccb;
+  --display: "Montserrat", "Arial Black", sans-serif;
+  --body: "Inter", system-ui, -apple-system, sans-serif;
 }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
-  --bg: #0d1c1f; --card: #13262a; --soft: #183034; --ink: #e9efec; --ink-2: #b4c2bf; --ink-3: #9fb0ad; --rule: #24393d;
-  --teal: #7cc0d6; --band: #0a1719; --band-card: #12272a; --band-rule: #22393c; color-scheme: dark;
+  --bg: #0a1a2b; --card: #13293f; --soft: #10243a; --ink: #e9f0f6; --ink-2: #b4c4d2; --ink-3: #a3b6c6; --rule: #22394f; --teal: #6cb8e6; --band: #061321; --band-card: #0d2135; --band-rule: #1f3a55; color-scheme: dark;
 } }
 :root[data-theme="dark"] {
-  --bg: #0d1c1f; --card: #13262a; --soft: #183034; --ink: #e9efec; --ink-2: #b4c2bf; --ink-3: #9fb0ad; --rule: #24393d;
-  --teal: #7cc0d6; --band: #0a1719; --band-card: #12272a; --band-rule: #22393c; color-scheme: dark;
+  --bg: #0a1a2b; --card: #13293f; --soft: #10243a; --ink: #e9f0f6; --ink-2: #b4c4d2; --ink-3: #a3b6c6; --rule: #22394f; --teal: #6cb8e6; --band: #061321; --band-card: #0d2135; --band-rule: #1f3a55; color-scheme: dark;
 }
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 90px; }
@@ -47,8 +45,8 @@ h1, h2, h3 { margin: 0; }
 p { margin: 0; }
 .wrap { width: min(1200px, 100% - 32px); margin-inline: auto; }
 .sec { padding: clamp(64px, 8vw, 104px) 0; }
-.kicker { font-size: .82rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--teal); margin-bottom: 14px; }
-.h2 { font: 800 clamp(2rem, 4vw, 3rem)/1.05 var(--display); font-stretch: 80%; letter-spacing: -.005em; }
+.kicker { font-family: var(--display); font-size: .78rem; font-weight: 700; letter-spacing: .24em; text-transform: uppercase; color: var(--teal); margin-bottom: 14px; }
+.h2 { font: 800 clamp(2rem, 4vw, 3rem)/1.05 var(--display);  letter-spacing: -.005em; }
 .lead { color: var(--ink-2); font-size: 1.05rem; max-width: 62ch; margin-top: 16px; }
 .btn { display: inline-flex; align-items: center; justify-content: center; padding: 16px 22px; border-radius: 6px; font-weight: 700; text-decoration: none; background: var(--ink); color: var(--bg); border: 1.5px solid var(--ink); }
 .btn:hover { opacity: .9; }
@@ -59,7 +57,7 @@ p { margin: 0; }
 .top { position: sticky; top: 0; z-index: 30; background: var(--card); border-bottom: 1px solid var(--rule); }
 .top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 78px; }
 .brand { display: flex; align-items: center; gap: 12px; color: var(--ink); text-decoration: none; }
-.brand .mark { width: 40px; height: 40px; border-radius: 8px; background: #10272b; color: #fff; display: grid; place-items: center; font: 800 17px/1 var(--display); font-stretch: 80%; letter-spacing: .02em; }
+.brand .mark { width: 40px; height: 40px; border-radius: 8px; background: #0b2842; color: #fff; display: grid; place-items: center; font: 800 17px/1 var(--display);  letter-spacing: .02em; }
 .brand b { display: block; font-size: 1.08rem; }
 .brand small { display: block; font-size: .82rem; color: var(--ink-3); }
 .nav { display: flex; align-items: center; gap: 22px; }
@@ -79,19 +77,19 @@ p { margin: 0; }
 /* Hero */
 .hero { padding: clamp(48px, 7vw, 80px) 0 clamp(40px, 6vw, 56px); }
 .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 5vw, 72px); align-items: center; }
-.hero h1 { font: 800 clamp(2.6rem, 5.6vw, 4.6rem)/1.02 var(--display); font-stretch: 80%; letter-spacing: -.01em; margin-bottom: 26px; }
+.hero h1 { font: 800 clamp(2.3rem, 4.4vw, 3.6rem)/1.06 var(--display);  letter-spacing: -.01em; margin-bottom: 26px; }
 .hero .lede { font-size: 1.15rem; color: var(--ink-2); max-width: 54ch; margin-bottom: 28px; }
 .ctas { display: flex; flex-wrap: wrap; gap: 14px; }
 .hero-photo { position: relative; margin: 0; border-radius: 14px; overflow: hidden; aspect-ratio: 566 / 462; background: var(--soft); }
 .hero-photo img { width: 100%; height: 100%; object-fit: cover; }
 .chips { position: absolute; left: 20px; bottom: 20px; display: grid; gap: 8px; justify-items: start; }
-.chips span { background: #fff; color: #10272b; font-size: .88rem; font-weight: 600; padding: 9px 14px; border-radius: 999px;  }
+.chips span { background: #fff; color: #0b2842; font-size: .88rem; font-weight: 600; padding: 9px 14px; border-radius: 999px;  }
 @media (max-width: 880px) { .hero-grid { grid-template-columns: 1fr; } }
 
 .stats { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: clamp(40px, 6vw, 56px); background: var(--card); border: 1px solid var(--rule); border-radius: 14px; overflow: hidden; }
 .stats div { padding: 22px 24px 24px; border-left: 1px solid var(--rule); }
 .stats div:first-child { border-left: 0; }
-.stats b { display: block; font: 800 2.7rem/1 var(--display); font-stretch: 80%; margin-bottom: 12px; }
+.stats b { display: block; font: 800 2.7rem/1 var(--display);  margin-bottom: 12px; }
 .stats span { color: var(--ink-2); font-size: .95rem; }
 @media (max-width: 880px) { .stats { grid-template-columns: 1fr 1fr; } .stats div:nth-child(3) { border-left: 0; } .stats div:nth-child(n+3) { border-top: 1px solid var(--rule); } }
 @media (max-width: 460px) { .stats { grid-template-columns: 1fr; } .stats div { border-left: 0; border-top: 1px solid var(--rule); } .stats div:first-child { border-top: 0; } }
@@ -103,7 +101,7 @@ p { margin: 0; }
 .q .tag { display: inline-flex; align-items: center; gap: 8px; font-size: .8rem; font-weight: 700; color: var(--teal); }
 .q .tag::before { content: ""; width: 8px; height: 8px; border-radius: 2px; background: var(--sun); }
 .q .ask { color: var(--ink-3); font-size: .95rem; }
-.q h3 { font: 800 1.6rem/1.1 var(--display); font-stretch: 80%; }
+.q h3 { font: 800 1.6rem/1.1 var(--display);  }
 .q p { color: var(--ink-2); font-size: .97rem; }
 .q .foot { margin-top: auto; padding-top: 12px; border-top: 1px solid var(--rule); font-size: .9rem; }
 .q .foot b { color: var(--ink); }
@@ -146,7 +144,7 @@ p { margin: 0; }
 .money { border-top: 1px solid var(--rule); }
 .money-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 44px; }
 .money-grid div { border-top: 4px solid var(--sun); padding-top: 18px; }
-.money-grid b { display: block; font: 800 clamp(2.6rem, 5vw, 3.6rem)/1 var(--display); font-stretch: 80%; margin-bottom: 12px; }
+.money-grid b { display: block; font: 800 clamp(2.6rem, 5vw, 3.6rem)/1 var(--display);  margin-bottom: 12px; }
 .money-grid b small { font-size: .45em; font-weight: 700; }
 .money-grid span { color: var(--ink-2); }
 .funds { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 36px; font-weight: 700; font-size: .95rem; }
@@ -182,7 +180,7 @@ p { margin: 0; }
 .way { background: var(--band-card); border: 1px solid var(--band-rule); border-radius: 12px; padding: 28px; display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
 .way h3 { font-size: 1.3rem; color: #fff; }
 .way p { color: var(--on-band-2); }
-.way .btn { background: var(--sun); color: #10272b; border-color: var(--sun); margin-top: 6px; }
+.way .btn { background: var(--sun); color: #0b2842; border-color: var(--sun); margin-top: 6px; }
 .docs { margin-top: 20px; background: var(--band-card); border: 1px solid var(--band-rule); border-radius: 12px; padding: 22px 28px; display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: center; justify-content: space-between; }
 .docs b { color: #fff; }
 .docs a { color: var(--sun); font-weight: 700; }
@@ -190,16 +188,21 @@ p { margin: 0; }
 .addr a { color: #fff; }
 @media (max-width: 760px) { .ways { grid-template-columns: 1fr; } }
 
-footer { background: #0a1c1e; color: #a9bbb8; padding: 28px 0; font-size: .88rem; }
+footer { background: #01284d; color: #a9bccb; padding: 28px 0; font-size: .88rem; }
 footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px 24px; }
 footer a { color: #fff; }
+
+/* Brand wordmark and labels, from the RTC social media flyer */
+.wm { display: inline-flex; flex-direction: column; justify-content: center; gap: 5px; padding-left: 12px; border-left: 3px solid #4c9225; text-decoration: none; color: var(--wm, #0b2842); line-height: 1; }
+.wm b { font: 900 1.3rem/1 "Montserrat", sans-serif; text-transform: uppercase; letter-spacing: .01em; }
+.wm small { font: 600 .62rem/1 "Montserrat", sans-serif; text-transform: uppercase; letter-spacing: .3em; opacity: .85; }
 </style>
 </head>
 <body>
 
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="#top" aria-label="Riverbank Technology Center, home"><span class="mark" aria-hidden="true">RTC</span><span><b>Riverbank Technology Center</b><small>Aemetis &times; Spartan</small></span></a>
+    <a class="wm" href="#top" aria-label="Riverbank Technology Center, home"><b>Riverbank</b><small>Technology Center</small></a>
     <button class="menu" aria-expanded="false" aria-controls="nav">Menu</button>
     <nav id="nav" class="nav" aria-label="Primary">
       <a href="#questions">Your questions</a>
@@ -397,6 +400,7 @@ footer a { color: #fff; }
 </section>
 </main>
 
+<svg class="waves" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true" style="display:block;width:100%;height:56px;margin-bottom:-1px"><path d="M0 34C240 4 480 6 720 30s480 40 720 6V80H0Z" fill="#6ca13e"/><path d="M0 46C260 20 520 22 760 44s460 34 680 8V80H0Z" fill="#1586c2"/><path d="M0 60C280 40 560 42 800 58s420 26 640 10V80H0Z" fill="#01284d"/></svg>
 <footer>
   <div class="wrap">
     <p>&copy; 2026 Riverbank Technology Center &middot; A joint project of Aemetis &amp; Spartan</p>

@@ -18,3 +18,18 @@ Four design directions for replacing https://www.riverbanktc.com/. All four use 
 **Locally:** open `index.html` in a browser. No build step is needed.
 
 The content rationale and the open copy issues are in [REDESIGN.md](REDESIGN.md).
+
+## Brand
+
+All previews use the colors and type from the RTC social media flyer:
+
+| Use | Color |
+|---|---|
+| Navy (text, headings, dark bands) | `#0b2842` |
+| Footer navy | `#01284d` |
+| Bright blue | `#1586c2` |
+| Link and button blue | `#0473b8` |
+| Green (labels, accents) | `#4c9225` / `#6ca13e` |
+| Muted text | `#516779` |
+
+Headings use Montserrat (800–900), and section labels use widely spaced Montserrat capitals. Body text is Inter. The header shows a text wordmark (RIVERBANK / TECHNOLOGY CENTER). Swap in the real RTC logo file once it is available. The footer has the flyer's blue and green wave band.
