@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Riverbank Technology Center</title>
-<meta name="description" content="Riverbank Technology Center: computing inside existing buildings at the Riverbank Industrial Complex. No city water, no new local grid capacity, no generators running day to day.">
+<meta name="description" content="Riverbank Technology Center: computing inside existing buildings at the Riverbank Industrial Complex. No Riverbank city water, no strain on the local grid, no turbines or generators running.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
@@ -140,7 +140,7 @@ h1, h2, h3 { margin: 0; text-wrap: balance; }
 
 /* commitments */
 .commit { list-style: none; margin: 0; padding: 0; border-top: 2px solid var(--ink); counter-reset: c; }
-.commit li { counter-increment: c; display: grid; grid-template-columns: 80px minmax(0, 1.1fr) minmax(0, 1.3fr) minmax(0, 1fr); gap: 12px 28px; padding-block: 22px; border-bottom: 1px solid var(--rule); }
+.commit li { counter-increment: c; display: grid; grid-template-columns: 80px minmax(0, 1fr); align-items: center; gap: 12px 28px; padding-block: 22px; border-bottom: 1px solid var(--rule); }
 .commit li::before { content: counter(c, decimal-leading-zero); font: 800 2rem/1 var(--display); color: var(--ink-2); }
 .commit h3 { font-size: 1.06rem; font-weight: 700; line-height: 1.35; }
 .commit p { color: var(--ink-2); font-size: .97rem; }
@@ -238,7 +238,7 @@ h1, h2, h3 { margin: 0; text-wrap: balance; }
 
 /* contact */
 .contact h2 { font: 900 clamp(3rem, 9vw, 7.4rem)/.88 var(--display); text-transform: uppercase; max-width: 12ch; }
-.contact-row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 44px; border-top: 2px solid var(--ink); }
+.contact-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 44px; border-top: 2px solid var(--ink); }
 .contact-row > div { padding: 22px 24px 4px 0; display: grid; gap: 12px; align-content: start; justify-items: start; }
 .contact-row > div + div { padding-left: 24px; border-left: 1px solid var(--rule); }
 .contact-row h3 { font-size: 1.06rem; }
@@ -260,10 +260,10 @@ footer b { color: var(--on-band); font: 800 1.2rem var(--display); text-transfor
     <nav class="nav" aria-label="Primary">
       <a href="#numbers">The numbers</a>
       <a href="#commitments">Commitments</a>
-      <a href="#site">The site</a>
-      <a href="#process">Review status</a>
+      <a href="#site">The project</a>
+      <a href="#water-power">Sustainability</a>
       <a href="#faq">FAQ</a>
-      <a class="ask" href="#contact">Ask a question</a>
+      <a class="ask" href="#contact">Contact</a>
     </nav>
   </div>
 </header>
@@ -271,21 +271,21 @@ footer b { color: var(--on-band); font: 800 1.2rem var(--display); text-transfor
 <main>
 <section class="hero" id="top">
   <div class="wrap">
-    <p class="mono status"><i aria-hidden="true"></i> 5300 Claus Rd, Riverbank &middot; Under City Council review &middot; <a href="#process">What happens next</a></p>
-    <h1>Computing inside the <em>old plant.</em></h1>
+    <p class="mono status"><i aria-hidden="true"></i> Riverbank Industrial Complex &middot; Riverbank, California</p>
+    <h1>Computing inside <em>existing buildings.</em></h1>
     <div class="hero-row">
-      <p class="lede">Riverbank Technology Center puts computers inside buildings that already stand at the former Army ammunition plant. <strong>It uses no city water, needs no new local grid capacity, and runs no generators day to day.</strong></p>
+      <p class="lede">Riverbank Technology Center is a joint project between Aemetis and Spartan, establishing the first Sustainable Computing Facility in the US inside existing buildings at the Riverbank Industrial Complex. <strong>No Riverbank city water. No strain on the local grid. No turbines or generators running.</strong></p>
       <div class="ctas">
-        <a class="btn" href="#numbers">See the numbers</a>
-        <a class="btn line" href="assets/RTC-Responsible-Development-Commitments.pdf">Commitments PDF</a>
+        <a class="btn" href="#numbers">Get the facts</a>
+        <a class="btn line" href="https://www.riverbanktc.com/assets/RTC-Responsible-Development-Commitments.pdf">Commitments PDF</a>
       </div>
     </div>
-    <div class="drawing"><svg class="cutaway" viewBox="0 0 1200 440" role="img" aria-labelledby="cutT cutD"><title id="cutT">Cutaway drawing of the facility</title><desc id="cutD">Claus Road on the left. More than 200 feet back sits an existing sawtooth-roof industrial building. Inside are rows of computer racks. Outside on the right are air-cooled chillers connected to the racks by a closed water loop, filled once from an on-site well. No generators.</desc>
+    <div class="drawing"><svg class="cutaway" viewBox="0 0 1200 440" role="img" aria-labelledby="cutT cutD"><title id="cutT">Simplified illustration of the facility</title><desc id="cutD">Illustration, not to scale and not the actual site layout. The street on the left. More than 200 feet back is an existing industrial building with computing equipment inside. Air-cooled chillers on a closed loop, with a one-time charge of recycled water from on-site wells. No turbines or generators running.</desc>
 <defs><pattern id="hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="8" class="hatch"/></pattern><marker id="ar" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="fill-hv"/></marker></defs>
 <rect x="0" y="370" width="1200" height="70" fill="url(#hatch)"/>
 <line x1="0" y1="370" x2="1200" y2="370" class="ln-strong"/>
 <rect x="20" y="362" width="120" height="8" class="fill-road"/>
-<text x="80" y="400" class="lbl" text-anchor="middle">CLAUS RD</text>
+<text x="80" y="400" class="lbl" text-anchor="middle">STREET</text>
 <rect x="300" y="200" width="660" height="170" class="bldg"/>
 <polyline points="300,200 300,154 360,200 360,200 360,154 420,200 420,200 420,154 480,200 480,200 480,154 540,200 540,200 540,154 600,200 600,200 600,154 660,200 660,200 660,154 720,200 720,200 720,154 780,200 780,200 780,154 840,200 840,200 840,154 900,200 900,200 900,154 960,200" class="roof"/>
 <line x1="300" y1="200" x2="300" y2="154" class="glaze"/>
@@ -387,23 +387,23 @@ footer b { color: var(--on-band); font: 800 1.2rem var(--display); text-transfor
 <text x="220.0" y="320" class="lbl lbl-hv" text-anchor="middle">200+ FT</text>
 <polyline points="420,170 420,66 440,66" class="leader"/>
 <circle cx="420" cy="170" r="3.5" class="fill-hv"/>
-<text x="446" y="60" class="lbl lbl-hv" text-anchor="start">EXISTING 1940s BUILDING</text>
-<text x="446" y="76" class="lbl" text-anchor="start">nothing new built</text>
+<text x="446" y="60" class="lbl lbl-hv" text-anchor="start">EXISTING INDUSTRIAL BUILDING</text>
+<text x="446" y="76" class="lbl" text-anchor="start">not new construction</text>
 <polyline points="700,310 700,106 720,106" class="leader"/>
 <circle cx="700" cy="310" r="3.5" class="fill-hv"/>
-<text x="726" y="100" class="lbl lbl-hv" text-anchor="start">COMPUTERS INDOORS</text>
-<text x="726" y="116" class="lbl" text-anchor="start">quiet, enclosed</text>
+<text x="726" y="100" class="lbl lbl-hv" text-anchor="start">COMPUTING INDOORS</text>
+<text x="726" y="116" class="lbl" text-anchor="start">200+ ft from the street</text>
 <polyline points="1050,230 1050,46 870,46" class="leader"/>
 <circle cx="1050" cy="230" r="3.5" class="fill-hv"/>
 <text x="864" y="40" class="lbl lbl-hv" text-anchor="end">CLOSED WATER LOOP</text>
-<text x="864" y="56" class="lbl" text-anchor="end">filled once, then recirculates</text>
+<text x="864" y="56" class="lbl" text-anchor="end">one-time charge of water</text>
 <polyline points="1160,356 1160,106 1180,106" class="leader"/>
 <circle cx="1160" cy="356" r="3.5" class="fill-hv"/>
-<text x="1174" y="100" class="lbl lbl-hv" text-anchor="end">ON-SITE WELL</text>
-<text x="1174" y="116" class="lbl" text-anchor="end">not city water</text>
-<text x="1046" y="400" class="lbl" text-anchor="middle">LOW-NOISE CHILLERS</text>
-<text x="630" y="400" class="lbl" text-anchor="middle">NO GENERATORS OR TURBINES RUNNING DAY TO DAY</text>
-</svg></div>
+<text x="1174" y="100" class="lbl lbl-hv" text-anchor="end">ON-SITE WELLS</text>
+<text x="1174" y="116" class="lbl" text-anchor="end">recycled, non-potable</text>
+<text x="1046" y="400" class="lbl" text-anchor="middle">LOW-DECIBEL CHILLERS</text>
+<text x="630" y="400" class="lbl" text-anchor="middle">NO TURBINES OR GENERATORS RUNNING</text>
+</svg><p class="mono" style="font-size:.72rem;color:var(--on-band-2);margin:10px 0 0">Simplified illustration. Not to scale and not the actual site layout.</p></div>
   </div>
 </section>
 
@@ -411,12 +411,12 @@ footer b { color: var(--on-band); font: 800 1.2rem var(--display); text-transfor
   <div class="wrap">
     <div class="sec-head">
       <p class="mono">The numbers</p>
-      <h2>What it takes from Riverbank.</h2>
+      <h2>The project at a glance.</h2>
     </div>
     <div class="zeros">
-      <div><span class="n">0</span><span class="u">Gallons of city water</span><p>The cooling loop is filled once from existing non-drinkable on-site wells. Those wells aren't connected to the city system.</p></div>
-      <div><span class="n">0</span><span class="u">New buildings</span><p>All equipment goes inside existing industrial buildings, more than 200 ft from the street.</p></div>
-      <div><span class="n">0</span><span class="u">Generators running</span><p>No diesel generators or gas turbines run for day-to-day power. Low-noise chillers stay below existing industrial limits.</p></div>
+      <div><span class="n">0</span><span class="u">Continuous water usage for cooling</span><p>A closed-loop system needs a one-time charge of recycled, non-drinkable industrial water from existing on-site wells. No City of Riverbank drinking water is used.</p></div>
+      <div><span class="n">37</span><span class="u">Existing tenants, RTC is one</span><p>The SCF will be one of 37 existing tenants at the Riverbank Industrial Complex: a modular, medium-sized computing facility, not a mega data center.</p></div>
+      <div><span class="n">200+</span><span class="u">Feet from the street</span><p>All computing equipment will be housed indoors in existing large industrial buildings, with no unsightly new structures built for computing.</p></div>
     </div>
   </div>
 </section>
@@ -426,33 +426,33 @@ footer b { color: var(--on-band); font: 800 1.2rem var(--display); text-transfor
     <div class="sec-head">
       <p class="mono">Expected local impact</p>
       <h2>What it gives back.</h2>
-      <p>Property tax pays for schools, fire protection, libraries, parks, and local government. The assumptions behind these estimates are in the commitments PDF.</p>
+      <p>Meaningful, sustained property tax revenue that funds schools, local governments, fire protection, libraries, and parks.</p>
     </div>
     <div class="zeros">
-      <div><span class="n">$10M+</span><span class="u">Property tax per year</span><p>New revenue for Stanislaus County and Riverbank.</p></div>
-      <div><span class="n">$5M+</span><span class="u">To local schools</span><p>That share goes to local schools every year.</p></div>
-      <div><span class="n">100s</span><span class="u">Construction jobs</span><p>Plus lasting local service jobs during operations.</p></div>
+      <div><span class="n">$10M+</span><span class="u">Property tax per year</span><p>New property tax revenue for Stanislaus County &amp; Riverbank.</p></div>
+      <div><span class="n">$5M+</span><span class="u">To local schools per year</span><p>Of that, funding local schools every year.</p></div>
+      <div><span class="n">100s</span><span class="u">Construction jobs</span><p>Hundreds of construction jobs, plus lasting local service jobs.</p></div>
     </div>
   </div>
 </section>
 
-<section class="sec">
+<section class="sec" id="scf">
   <div class="wrap">
     <div class="sec-head">
-      <p class="mono">Scale</p>
-      <h2>Not a mega data center.</h2>
-      <p>The data centers in the news are new campuses of hundreds of megawatts. RTC is a medium-sized, modular facility and one of 37 tenants at the complex.</p>
+      <p class="mono">A new standard</p>
+      <h2>A Sustainable Computing Facility.</h2>
+      <p>Economic development that adds jobs, repeatable tax revenues, and a sustainable project that doesn't pollute or deplete natural resources. RTC is the first project built to the SCF standard.</p>
     </div>
     <div class="versus">
       <table>
-        <caption class="sr-only">Typical hyperscale campus compared with Riverbank Technology Center</caption>
-        <thead><tr><th scope="col" class="mono">&nbsp;</th><th scope="col" class="mono">Typical hyperscale campus</th><th scope="col" class="mono us-h">Riverbank Technology Center</th></tr></thead>
+        <caption class="sr-only">The five parts of the Sustainable Computing Facility standard</caption>
+        <thead><tr><th scope="col" class="mono">&nbsp;</th><th scope="col" class="mono us-h">The SCF standard</th></tr></thead>
         <tbody>
-          <tr><th scope="row">Land</th><td class="them">New buildings, often on farmland or open land</td><td class="us">Existing buildings on land already zoned industrial</td></tr>
-          <tr><th scope="row">Size</th><td class="them">Hundreds of megawatts across many buildings</td><td class="us">Medium-sized and modular</td></tr>
-          <tr><th scope="row">Cooling water</th><td class="them">Evaporative cooling can use millions of gallons a year</td><td class="us">Closed loop, filled once from on-site wells</td></tr>
-          <tr><th scope="row">Power</th><td class="them">Often needs new local generation or transmission</td><td class="us">Existing grid capacity built for the site's heavy industry</td></tr>
-          <tr><th scope="row">Generators</th><td class="them">Banks of diesel generators or gas turbines</td><td class="us">None running day to day</td></tr>
+          <tr><th scope="row">Water</th><td class="us">Zero continuous water usage for cooling. A one-time charge of water consistent with the annual needs of a few homes, from recycled on-site non-potable water.</td></tr>
+          <tr><th scope="row">Power</th><td class="us">Sourced from non-local utility power production, using existing grid and transmission capacity already built to serve the site.</td></tr>
+          <tr><th scope="row">Buildings</th><td class="us">Reuse of existing industrial buildings, avoiding the need for new construction.</td></tr>
+          <tr><th scope="row">Land</th><td class="us">Industrially-zoned land, not farmland or land that could be used to build housing.</td></tr>
+          <tr><th scope="row">Tax revenue</th><td class="us">Large, recurring local property tax revenue.</td></tr>
         </tbody>
       </table>
     </div>
@@ -463,47 +463,47 @@ footer b { color: var(--on-band); font: 800 1.2rem var(--display); text-transfor
   <div class="wrap">
     <div class="sec-head">
       <p class="mono">Responsible development</p>
-      <h2>Seven commitments you can check.</h2>
-      <p>Written for neighbors, Riverbank city leaders, and Stanislaus County officials. Each one names the proof.</p>
+      <h2>How we will plan, build, and operate.</h2>
+      <p>Published for our neighbors, Riverbank city leaders, and Stanislaus County officials: seven commitments that govern this project from design through daily operation.</p>
     </div>
     <ol class="commit">
-      <li><h3>Protect the local grid and electricity rates</h3><p>RTC uses existing transmission capacity and pays for any on-site utility upgrades it needs.</p><p class="proof"><span class="mono">Proof</span>Interconnection agreements and upgrade costs on file with the city.</p></li>
-      <li><h3>Use water responsibly</h3><p>No City of Riverbank water. The cooling loop gets a one-time fill of recycled, non-drinkable well water.</p><p class="proof"><span class="mono">Proof</span>Metered well-water use, published every year.</p></li>
-      <li><h3>Keep operations clean and quiet</h3><p>All equipment indoors, low-noise chillers, and no turbines or generators running day to day.</p><p class="proof"><span class="mono">Proof</span>Property-line noise readings, published.</p></li>
-      <li><h3>Design with neighbors in mind, on existing industrial land</h3><p>Existing buildings more than 200 ft from the street, on land already zoned industrial.</p><p class="proof"><span class="mono">Proof</span>Site plan on file with the city.</p></li>
-      <li><h3>Engage regularly with the community</h3><p>Regular public updates, and a named contact who answers every question.</p><p class="proof"><span class="mono">Proof</span>Meeting schedule and past Q&amp;A posted on this site.</p></li>
-      <li><h3>Explain community benefits clearly</h3><p>Plain-language figures on taxes, jobs, and local spending.</p><p class="proof"><span class="mono">Proof</span>Sources for every number listed in the commitments PDF.</p></li>
-      <li><h3>Follow through on our commitments</h3><p>A public report on each commitment every year.</p><p class="proof"><span class="mono">Proof</span>Annual reports posted on this site.</p></li>
+      <li><h3>Protect the local grid and electricity rates</h3></li>
+      <li><h3>Use water responsibly</h3></li>
+      <li><h3>Keep operations clean and quiet</h3></li>
+      <li><h3>Design with neighbors in mind, on existing industrial land</h3></li>
+      <li><h3>Engage regularly with the community</h3></li>
+      <li><h3>Explain community benefits clearly</h3></li>
+      <li><h3>Follow through on our commitments</h3></li>
     </ol>
-    <div class="after"><a class="btn dark" href="assets/RTC-Responsible-Development-Commitments.pdf">Download the full commitments</a></div>
+    <div class="after"><a class="btn dark" href="https://www.riverbanktc.com/assets/RTC-Responsible-Development-Commitments.pdf">Download the full PDF</a></div>
   </div>
 </section>
 
 <section class="sec" id="site">
   <div class="wrap">
     <div class="sec-head">
-      <p class="mono">The site</p>
+      <p class="mono">The project</p>
       <h2>Inside the Riverbank Industrial Complex.</h2>
-      <p>The complex once housed an aluminum smelter and U.S. Army ammunition casing production. Aemetis has been its master developer since 2022.</p>
+      <p>A modern computing facility built to house high-performance computing, inside existing buildings that once supported an aluminum smelter and U.S. Army ammunition casings production. Aemetis has been master developer of the complex since 2022.</p>
     </div>
     <figure class="photo wide">
-      <img src="../../img/aerial.jpg" alt="Aerial view of the Riverbank Industrial Complex: long industrial buildings, rail spurs, and parking, with farmland beyond" width="2000" height="1120" loading="lazy">
-      <figcaption class="mono">The Riverbank Industrial Complex today</figcaption>
+      <img src="../../img/aerial.jpg" alt="Aerial view of the Riverbank Industrial Complex: long industrial buildings, rail lines, and parking, with farmland beyond" width="2000" height="1120" loading="lazy">
+      <figcaption class="mono">The Riverbank Industrial Complex</figcaption>
     </figure>
     <div class="site-grid">
       <div>
         <dl class="facts-list">
-          <div><dt class="mono">Buildings</dt><dd>Existing industrial buildings. No new structures for computing.</dd></div>
-          <div><dt class="mono">Setback</dt><dd>All equipment more than 200 ft from the street.</dd></div>
-          <div><dt class="mono">Zoning</dt><dd>Already industrial. No farmland or housing land.</dd></div>
-          <div><dt class="mono">Neighbors</dt><dd>One of 37 tenants at the complex.</dd></div>
+          <div><dt class="mono">Reuse</dt><dd>Existing industrial buildings, not new construction.</dd></div>
+          <div><dt class="mono">Setback</dt><dd>All equipment more than 200 feet from the street. All computing equipment housed indoors.</dd></div>
+          <div><dt class="mono">Zoning</dt><dd>Already zoned industrial. Not agricultural land or land that could be used for housing.</dd></div>
+          <div><dt class="mono">Scale</dt><dd>One of 37 existing tenants. Modular, medium-sized, not a mega data center.</dd></div>
           <div><dt class="mono">Address</dt><dd>5300 Claus Rd, Riverbank, CA 95367</dd></div>
         </dl>
         <a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=5300+Claus+Rd+Riverbank+CA+95367">Open in Google Maps &rarr;</a>
       </div>
       <figure class="photo">
-        <img src="../../img/interior.jpg" alt="Interior of a large existing industrial building at the complex, with high ceilings and equipment on the floor" width="624" height="303" loading="lazy">
-        <figcaption class="mono">Inside one of the existing buildings. Computing equipment goes in spaces like this.</figcaption>
+        <img src="../../img/interior.jpg" alt="Interior of a large industrial building with high ceilings and equipment on the floor" width="624" height="303" loading="lazy">
+        <figcaption class="mono">Inside the Riverbank Industrial Complex</figcaption>
       </figure>
     </div>
   </div>
@@ -513,46 +513,43 @@ footer b { color: var(--on-band); font: 800 1.2rem var(--display); text-transfor
   <div class="wrap">
     <div class="sec-head">
       <p class="mono">How it runs</p>
-      <h2>Water and power.</h2>
+      <h2>Water-wise cooling. Clean, quiet power.</h2>
     </div>
     <div class="wp">
       <div>
         <h3>Water</h3>
         <ul>
-          <li>Closed loop with air-cooled chillers. The same water recirculates.</li>
-          <li>One-time fill from existing on-site wells. The water is recycled and non-drinkable.</li>
-          <li>No City of Riverbank drinking water, and no agricultural water.</li>
-          <li>The fill is about what a few homes use in a year.</li>
+          <li>Zero continuous water usage for cooling.</li>
+          <li>Recycled, non-drinkable industrial water drawn from existing on-site wells, paired with closed-loop, air-cooled chillers.</li>
+          <li>No City of Riverbank drinking water, and no agricultural water supplies.</li>
+          <li>The one-time charge of water is consistent with the annual needs of a few homes.</li>
         </ul>
       </div>
       <div>
         <h3>Power</h3>
         <ul>
-          <li>Sourced from outside the Riverbank area, including renewable hydroelectric.</li>
-          <li>Uses grid and transmission capacity built for the site's former heavy industry.</li>
-          <li>RTC pays for any on-site upgrades. Ratepayers and taxpayers don't.</li>
-          <li>No gas turbines or diesel generators running day to day.</li>
+          <li>Sourced from outside the Riverbank area, using renewable hydroelectric and other clean power.</li>
+          <li>Reuses grid infrastructure originally built for the site's former heavy industry.</li>
+          <li>Does not strain local grid capacity or raise electricity costs for Riverbank ratepayers. The project pays for any onsite utility upgrades, not ratepayers or taxpayers.</li>
+          <li>No large, loud generators or gas turbines for day-to-day power. Any onsite power is designed to minimize local air-quality impact.</li>
         </ul>
       </div>
     </div>
   </div>
 </section>
 
-<section class="sec" id="process">
+<section class="sec" id="partners">
   <div class="wrap">
     <div class="sec-head">
-      <p class="mono">Public process</p>
-      <h2>Where things stand.</h2>
-      <p>Riverbank's City Council is reviewing data center proposals. Every step ahead includes a chance for residents to weigh in.</p>
+      <p class="mono">Who we are</p>
+      <h2>A new chapter, built on deep roots.</h2>
+      <p>Two partners with a shared belief that economic development projects should be built with a community, not just in it.</p>
     </div>
-    <ol class="steps">
-      <li class="done"><span class="mono">2022</span><h3>Aemetis becomes master developer</h3></li>
-      <li class="done"><span class="mono">2026</span><h3>Proposal and commitments published</h3></li>
-      <li class="now"><span class="mono">Now</span><h3>City Council review</h3><p>Watch city agendas for public comment.</p></li>
-      <li><span class="mono">Next</span><h3>Community meetings and environmental review</h3></li>
-      <li><span class="mono">Later</span><h3>Permits, then construction</h3></li>
-      <li><span class="mono">Ongoing</span><h3>Operations and annual reports</h3></li>
-    </ol>
+    <dl class="facts-list">
+      <div><dt class="mono">Aemetis</dt><dd>A leading developer and producer of renewable fuels and low-carbon energy. Master developer of the Riverbank Industrial Complex since 2022, and one of the largest property taxpayers in Stanislaus County.</dd></div>
+      <div><dt class="mono">Spartan</dt><dd>Modular computing facility design and delivery, built for speed and reliability.</dd></div>
+      <div><dt class="mono">RTC</dt><dd>A community-first computing facility that reuses existing site resources at the Riverbank Industrial Complex.</dd></div>
+    </dl>
   </div>
 </section>
 
@@ -560,14 +557,14 @@ footer b { color: var(--on-band); font: 800 1.2rem var(--display); text-transfor
   <div class="wrap">
     <div class="sec-head">
       <p class="mono">Rooted in Riverbank</p>
-      <h2>Here before this project.</h2>
-      <p>Aemetis has supported local events, education, and families in Riverbank for years.</p>
+      <h2>A partner in this community for years.</h2>
+      <p>Long before this project, Aemetis has been part of Riverbank, supporting local events, education, and families.</p>
     </div>
     <div class="events">
-      <figure class="photo"><img src="../../img/fourth-of-july.jpg" alt="Families at a Fourth of July celebration in a Riverbank park, with red, white, and blue balloons" width="1000" height="754" loading="lazy"><figcaption><b>Fourth of July</b><span class="mono">Community celebration</span></figcaption></figure>
-      <figure class="photo"><img src="../../img/united-we-float.jpg" alt="Aemetis staff and community members with donated life jackets for United We Float" width="674" height="900" loading="lazy"><figcaption><b>United We Float</b><span class="mono">Life jacket donations</span></figcaption></figure>
-      <figure class="photo"><img src="../../img/bike-ride.jpg" alt="Children and families riding bikes down a Riverbank street" width="677" height="900" loading="lazy"><figcaption><b>Community Bike Ride</b><span class="mono">Families &amp; kids</span></figcaption></figure>
-      <figure class="photo"><img src="../../img/police-bikes.jpg" alt="Riverbank Police Services officers with donated children's bikes" width="272" height="363" loading="lazy"><figcaption><b>Police Partnership</b><span class="mono">Bikes for local kids</span></figcaption></figure>
+      <figure class="photo"><img src="../../img/fourth-of-july.jpg" alt="Children walking past red, white, and blue balloons at an outdoor Fourth of July celebration" width="1000" height="754" loading="lazy"><figcaption><b>Fourth of July</b></figcaption></figure>
+      <figure class="photo"><img src="../../img/united-we-float.jpg" alt="Four people holding children's life jackets in front of Aemetis signs" width="674" height="900" loading="lazy"><figcaption><b>United We Float</b></figcaption></figure>
+      <figure class="photo"><img src="../../img/bike-ride.jpg" alt="Children and adults riding bikes and walking down a street" width="677" height="900" loading="lazy"><figcaption><b>Community Bike Ride</b></figcaption></figure>
+      <figure class="photo"><img src="../../img/police-bikes.jpg" alt="A group standing with children's bikes under a Riverbank Police Services sign" width="272" height="363" loading="lazy"><figcaption><b>Local Police Partnership</b></figcaption></figure>
     </div>
   </div>
 </section>
@@ -580,26 +577,24 @@ footer b { color: var(--on-band); font: 800 1.2rem var(--display); text-transfor
     </div>
     <div class="body-col">
       <div class="faq-grid">
-        <details><summary>Didn't the city pause data center projects?</summary><p>Yes. In September 2026 the City Council adopted a temporary moratorium to study data center proposals. We support a careful review and have published our commitments so the Council and residents can judge this project on its specifics.</p></details>
-        <details><summary>How much water will it use, and where does it come from?</summary><p>The closed cooling loop gets a one-time fill of recycled, non-drinkable water from existing on-site wells that aren't connected to Riverbank's municipal system. After that the water recirculates. There's no continuous draw for cooling.</p></details>
-        <details><summary>Will my electricity rates go up?</summary><p>RTC uses transmission capacity already built for the site's former heavy industry and pays for any on-site upgrades it needs. It doesn't ask ratepayers or taxpayers to fund new capacity.</p></details>
-        <details><summary>How loud will it be?</summary><p>All computing equipment is indoors, more than 200 ft from the street. The chillers are low-noise, and no turbines or generators run day to day. Noise stays below the levels already allowed in this industrial zone.</p></details>
-        <details><summary>What is a "Sustainable Computing Facility"?</summary><p>Our name for a computing facility that meets five standards: no continuous cooling water, power from existing grid capacity, reuse of existing buildings, industrial rather than agricultural land, and recurring local tax revenue.</p></details>
-        <details><summary>Why Riverbank?</summary><p>The complex already has large industrial buildings, industrial zoning, and underused grid connections. Using them avoids building on farmland or land that could be used for housing.</p></details>
-        <details><summary>Who are Aemetis and Spartan?</summary><p>Aemetis produces renewable fuels and low-carbon energy and has been master developer of the Riverbank Industrial Complex since 2022. Spartan designs and delivers modular computing facilities.</p></details>
+        <details><summary>What is a "Sustainable Computing Facility"?</summary><p>Economic development that adds jobs, repeatable tax revenues, and a sustainable project that doesn't pollute or deplete natural resources: zero continuous water usage for cooling, sustainable power sourcing, reuse of existing industrial buildings, industrially-zoned land, and large, recurring local tax revenue. RTC is the first project built to the SCF standard.</p></details>
+        <details><summary>How much water will it use, and where does it come from?</summary><p>There is zero continuous water usage for cooling. The closed-loop system needs a one-time charge of water consistent with the annual needs of a few homes: recycled, non-drinkable industrial water drawn from existing on-site wells, not municipal drinking or agricultural water supplies.</p></details>
+        <details><summary>Will my electricity rates go up?</summary><p>RTC does not strain local grid capacity or raise electricity costs for Riverbank ratepayers. The project will pay for any onsite utility upgrades the facility requires, not ratepayers or taxpayers.</p></details>
+        <details><summary>How loud will it be?</summary><p>All computing equipment will be housed indoors in existing large industrial buildings, more than 200 feet from the street. There are no large, loud generators or gas turbines for day-to-day power, and low-decibel chillers keep noise below the levels already allowed by the industrial setting.</p></details>
+        <details><summary>Why the Riverbank Industrial Complex?</summary><p>An SCF puts underused industrial property to work, rather than converting farmland or land that could be used to build housing. The site already has existing industrial buildings and grid infrastructure originally built for its former heavy industry.</p></details>
+        <details><summary>Who are Aemetis and Spartan?</summary><p>Aemetis is a leading developer and producer of renewable fuels and low-carbon energy, and has been master developer of the Riverbank Industrial Complex since 2022. Spartan designs and delivers modular computing facilities.</p></details>
       </div>
-      <p class="faq-more">Have a question that isn't here? <a href="#contact">Ask us</a> and we'll add the answer.</p>
     </div>
   </div>
 </section>
 
 <section class="sec contact" id="contact">
   <div class="wrap">
-    <h2>Ask us anything.</h2>
+    <h2>Let's build the future of Riverbank together.</h2>
+    <p style="max-width:60ch">Whether you're a neighbor curious about the project or a business partner exploring an opportunity, we welcome the conversation.</p>
     <div class="contact-row">
-      <div><h3>Neighbors</h3><p>Project questions, education programs, local events.</p><a class="btn dark" href="mailto:Community@aemetis.com?subject=RTC%20community%20question">Email a question</a></div>
+      <div><h3>For the community</h3><p>Community questions, education programs, and local events.</p><a class="btn dark" href="mailto:Community@aemetis.com?subject=RTC%20community%20question">Email us</a></div>
       <div><h3>Business &amp; partners</h3><p>Partnership and site inquiries.</p><a class="btn dark" href="mailto:Community@aemetis.com?subject=RTC%20partnership%20inquiry">Contact us</a></div>
-      <div><h3>Updates</h3><p>Meetings, milestones, and annual reports.</p><a class="btn dark" href="mailto:Community@aemetis.com?subject=Add%20me%20to%20RTC%20updates">Join the list</a></div>
     </div>
     <p class="addr mono"><span><a href="mailto:Community@aemetis.com">Community@aemetis.com</a></span><span>5300 Claus Rd, Riverbank, CA 95367</span></p>
   </div>

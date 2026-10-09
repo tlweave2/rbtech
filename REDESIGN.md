@@ -1,5 +1,7 @@
 # riverbanktc.com redesign brief
 
+> **Update:** the previews now use only claims found on the current riverbanktc.com. The moratorium/status bar, process timeline, "How to check" lines, hyperscale comparison, and other additions proposed below were removed. See [CLAIMS-AUDIT.md](CLAIMS-AUDIT.md). The items below are kept as recommendations for the client to approve, not as live content.
+
 ## Context
 - In September 2026 the Riverbank City Council unanimously passed a 45-day data center moratorium, running to about Oct 13. Council said it would revisit the issue at its first October meeting. ([Registry SF](https://news.theregistrysf.com/riverbank-freezes-data-center-rush-with-45-day-moratorium-as-aemetis-pitches-clean-energy-project-on-former-army-munitions-site/), [Oakdale Leader](https://www.oakdaleleader.com/news/public-safety-business-talk-fill-riverbank-agenda/))
 - So the people reading this site are skeptical residents and council members, not investors. The site should answer their worries fast, show its evidence, and point to the public process.

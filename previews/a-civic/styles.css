@@ -109,7 +109,8 @@ p { margin: 0 0 1em; }
 
 /* Commitments */
 .commit-list { list-style: none; counter-reset: c; padding: 0; margin: 0 0 2rem; display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
-.commit-list li { counter-increment: c; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 24px 24px 20px 76px; position: relative; }
+.commit-list li { counter-increment: c; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 24px 24px 22px 76px; position: relative; }
+.commit-list h3 { margin: 4px 0 0; }
 .commit-list li::before { content: counter(c, decimal-leading-zero); position: absolute; left: 22px; top: 22px; font: 600 1.5rem var(--serif); color: var(--clay); }
 .commit-list p { font-size: .96rem; color: var(--ink-2); margin-bottom: .6em; }
 .commit-list .verify { background: var(--paper-2); border-radius: 8px; padding: 8px 12px; margin: 0; font-size: .9rem; }
@@ -130,6 +131,7 @@ p { margin: 0 0 1em; }
 
 /* Water & power */
 .wp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 2rem; }
+.compare .wp-card .check li { margin-bottom: 1em; }
 .wp-card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 26px; }
 .loop { width: 100%; height: auto; margin: 6px 0 18px; }
 @media (max-width: 860px) { .wp-grid { grid-template-columns: 1fr; } }
@@ -174,7 +176,7 @@ p { margin: 0 0 1em; }
 .faq-more { margin-top: 1.5rem; }
 
 /* Contact */
-.contact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin: 2rem 0 1.5rem; }
+.contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; margin: 2rem 0 1.5rem; }
 .contact-card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; display: flex; flex-direction: column; align-items: flex-start; }
 .contact-card p { color: var(--ink-2); flex: 1; }
 .address { color: var(--ink-2); }

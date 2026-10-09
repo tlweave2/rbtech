@@ -1,14 +1,15 @@
 # riverbanktc.com redesign previews
 
-Three design directions for replacing https://www.riverbanktc.com/. All three use the same content and photos.
+Four design directions for replacing https://www.riverbanktc.com/. All four use the same content and photos, and every claim comes from the current site (see [CLAIMS-AUDIT.md](CLAIMS-AUDIT.md)).
 
 | | Direction | Folder |
 |---|---|---|
 | A | Civic: calm, public-agency feel | [`previews/a-civic/`](previews/a-civic/index.html) |
 | B | Industrial: bold, technical spec-sheet | [`previews/b-industrial/`](previews/b-industrial/index.html) |
 | C | Hometown: warm, photo-led, neighborly | [`previews/c-hometown/`](previews/c-hometown/index.html) |
+| D | Straight Answers: question-led, based on the uploaded design | [`previews/d-straight-answers/`](previews/d-straight-answers/index.html) |
 
-`index.html` at the root is the hub page that links to all three.
+`index.html` at the root is the hub page that links to all four. `design-source/` holds the original exported design file that D is based on. It is for reference only and was not claim-checked.
 
 ## Viewing the previews
 
