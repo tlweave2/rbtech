@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Riverbank Technology Center</title>
+<meta name="description" content="Riverbank Technology Center puts the old Army plant back to work: computing inside existing buildings at the Riverbank Industrial Complex, with no city water, no new local grid capacity, and no generators running day to day.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap">
+<style>
+/* Layout: hometown / photo-led. Warm Central Valley palette, big photography, friendly conversational copy. */
+:root {
+  --cream: #faf6ee;
+  --cream-2: #f2ebdd;
+  --card: #ffffff;
+  --ink: #1e2a24;
+  --ink-2: #55625b;
+  --rule: #e2d9c7;
+  --olive: #3d5a3f;
+  --olive-2: #2c432e;
+  --river: #2f6f8f;
+  --sun: #e08a3c;
+  --sun-soft: #fbe5cf;
+  --on-dark: #f7f2e8;
+  --serif: "DM Serif Display", Georgia, serif;
+  --sans: "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --r: 18px;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --cream: #141a16; --cream-2: #1b231e; --card: #212b25; --ink: #eef0ea; --ink-2: #a9b4ac; --rule: #2f3a33;
+  --olive: #8fb592; --olive-2: #a8c9aa; --river: #7db6d2; --sun: #f0a15c; --sun-soft: #3a2a1c; color-scheme: dark;
+} }
+:root[data-theme="dark"] {
+  --cream: #141a16; --cream-2: #1b231e; --card: #212b25; --ink: #eef0ea; --ink-2: #a9b4ac; --rule: #2f3a33;
+  --olive: #8fb592; --olive-2: #a8c9aa; --river: #7db6d2; --sun: #f0a15c; --sun-soft: #3a2a1c; color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 76px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { margin: 0; background: var(--cream); color: var(--ink); font: 400 17px/1.65 var(--sans); -webkit-font-smoothing: antialiased; }
+img, svg { max-width: 100%; display: block; }
+a { color: var(--river); text-underline-offset: 3px; }
+:focus-visible { outline: 3px solid var(--sun); outline-offset: 3px; border-radius: 6px; }
+h1, h2, h3 { margin: 0 0 .45em; line-height: 1.1; font-weight: 400; }
+h2 { font: 400 clamp(2rem, 4.4vw, 3.1rem)/1.05 var(--serif); letter-spacing: -.005em; }
+h2 em, h1 em { font-style: italic; color: var(--sun); }
+h3 { font: 700 1.1rem/1.3 var(--sans); }
+p { margin: 0 0 1em; }
+.wrap { width: min(1180px, 100% - 32px); margin-inline: auto; }
+.sec { padding: clamp(64px, 9vw, 112px) 0; }
+.kicker { display: inline-flex; align-items: center; gap: 8px; font-size: .82rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--olive); margin-bottom: 14px; }
+.kicker::before { content: ""; width: 22px; height: 2px; background: var(--sun); }
+.intro { max-width: 60ch; color: var(--ink-2); font-size: 1.1rem; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.btn { display: inline-flex; align-items: center; gap: 8px; background: var(--sun); color: #1e2a24; font-weight: 700; text-decoration: none; padding: .85em 1.4em; border-radius: 999px; transition: transform .15s, background .15s; }
+.btn:hover { background: #ec9a50; transform: translateY(-1px); }
+.btn.ghost { background: transparent; color: inherit; box-shadow: inset 0 0 0 2px currentColor; }
+.btn.ghost:hover { background: rgba(255,255,255,.12); }
+
+/* Header */
+.top { position: sticky; top: 0; z-index: 40; background: color-mix(in srgb, var(--cream) 92%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid var(--rule); }
+.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 66px; }
+.brand { display: flex; align-items: center; gap: 10px; color: var(--ink); text-decoration: none; }
+.brand svg { flex: none; }
+.brand b { font: 400 1.25rem/1 var(--serif); }
+.brand small { display: block; font-size: .72rem; color: var(--ink-2); letter-spacing: .04em; margin-top: 3px; }
+.nav { display: flex; align-items: center; gap: 24px; }
+.nav a { color: var(--ink); text-decoration: none; font-weight: 500; font-size: .95rem; }
+.nav a:hover { color: var(--sun); }
+.nav .btn { color: #1e2a24; padding: .55em 1.1em; font-size: .9rem; }
+.menu { display: none; background: none; border: 1px solid var(--rule); color: var(--ink); border-radius: 999px; padding: 7px 15px; font: 600 .9rem var(--sans); }
+@media (max-width: 920px) {
+  .menu { display: block; }
+  .nav { display: none; position: absolute; left: 0; right: 0; top: 100%; flex-direction: column; align-items: stretch; gap: 0; background: var(--cream); border-bottom: 1px solid var(--rule); padding: 6px 16px 18px; }
+  .nav.open { display: flex; }
+  .nav a:not(.btn) { padding: 13px 0; border-bottom: 1px solid var(--rule); }
+  .nav .btn { margin-top: 14px; justify-content: center; }
+}
+
+/* Hero */
+.hero { position: relative; min-height: min(88vh, 780px); display: grid; align-items: end; color: #fff; overflow: hidden; }
+.hero > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 60% 40%; }
+.hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(20,30,24,.15) 0%, rgba(20,30,24,.35) 40%, rgba(20,30,24,.88) 100%); }
+.hero .wrap { position: relative; z-index: 1; padding: 120px 0 clamp(40px, 6vw, 72px); }
+.pill { display: inline-flex; align-items: center; gap: 10px; background: rgba(255,255,255,.14); backdrop-filter: blur(6px); border: 1px solid rgba(255,255,255,.25); border-radius: 999px; padding: 7px 14px; font-size: .88rem; margin-bottom: 22px; }
+.pill i { width: 9px; height: 9px; border-radius: 50%; background: var(--sun); box-shadow: 0 0 0 4px rgba(224,138,60,.35); }
+.pill a { color: #fff; font-weight: 600; }
+.hero h1 { font: 400 clamp(2.7rem, 7.5vw, 5.6rem)/.98 var(--serif); letter-spacing: -.01em; max-width: 14ch; margin-bottom: 20px; }
+.hero h1 em { color: #f6b77a; }
+.hero .lede { font-size: clamp(1.05rem, 1.6vw, 1.25rem); max-width: 54ch; color: #eef0ea; margin-bottom: 28px; }
+.hero .ctas { display: flex; flex-wrap: wrap; gap: 12px; }
+.hero .credit { position: absolute; right: 16px; bottom: 12px; z-index: 1; font-size: .72rem; color: rgba(255,255,255,.7); }
+
+/* Quick answers */
+.answers { margin-top: -1px; background: var(--olive-2); color: var(--on-dark); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .answers { background: #1f2c22; } }
+:root[data-theme="dark"] .answers { background: #1f2c22; }
+.answers .wrap { display: grid; grid-template-columns: repeat(4, 1fr); }
+.answers a { display: block; padding: 28px 24px 30px; color: inherit; text-decoration: none; border-left: 1px solid rgba(255,255,255,.14); transition: background .15s; }
+.answers a:first-child { border-left: 0; }
+.answers a:hover { background: rgba(255,255,255,.06); }
+.answers .q { font-size: .88rem; color: #c9d3c8; margin-bottom: 6px; }
+.answers .a { font: 400 1.65rem/1.1 var(--serif); color: #fff; margin-bottom: 8px; }
+.answers .more { font-size: .85rem; font-weight: 600; color: #f6b77a; }
+@media (max-width: 900px) { .answers .wrap { grid-template-columns: 1fr 1fr; } .answers a:nth-child(3) { border-left: 0; } .answers a:nth-child(n+3) { border-top: 1px solid rgba(255,255,255,.14); } }
+@media (max-width: 520px) { .answers .wrap { grid-template-columns: 1fr; } .answers a { border-left: 0; border-top: 1px solid rgba(255,255,255,.14); } .answers a:first-child { border-top: 0; } }
+
+/* Story: then and now */
+.story { display: grid; grid-template-columns: 1fr 1.1fr; gap: clamp(32px, 6vw, 80px); align-items: center; }
+.story .stack { position: relative; padding-bottom: 60px; }
+.story .stack img { border-radius: var(--r); width: 100%; height: auto; box-shadow: 0 24px 50px -24px rgba(30,42,36,.45); }
+.story .stack .badge { position: absolute; right: -10px; bottom: 0; background: var(--card); border-radius: var(--r); padding: 18px 22px; box-shadow: 0 18px 40px -20px rgba(30,42,36,.4); max-width: 250px; }
+.badge b { display: block; font: 400 2.4rem/1 var(--serif); color: var(--sun); }
+.badge span { font-size: .9rem; color: var(--ink-2); }
+.history { list-style: none; padding: 0; margin: 28px 0 0; display: grid; gap: 0; }
+.history li { display: grid; grid-template-columns: 74px 1fr; gap: 16px; padding: 14px 0; border-top: 1px solid var(--rule); }
+.history li:last-child { border-bottom: 1px solid var(--rule); }
+.history .yr { font: 400 1.35rem/1.2 var(--serif); color: var(--olive); }
+.history p { margin: 0; color: var(--ink-2); }
+@media (max-width: 880px) { .story { grid-template-columns: 1fr; } .story .stack .badge { right: 12px; } }
+
+/* Numbers */
+.numbers { background: var(--cream-2); }
+.split { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 40px; }
+.panel { background: var(--card); border-radius: var(--r); padding: clamp(24px, 3vw, 36px); }
+.panel h3 { font: 400 1.6rem/1.15 var(--serif); margin-bottom: 18px; }
+.panel.takes h3 { color: var(--river); }
+.panel.gives h3 { color: var(--sun); }
+.figs { display: grid; gap: 0; }
+.fig { display: grid; grid-template-columns: 112px 1fr; gap: 18px; align-items: baseline; padding: 16px 0; border-top: 1px solid var(--rule); }
+.fig .n { font: 400 2.6rem/1 var(--serif); }
+.takes .n { color: var(--river); }
+.gives .n { color: var(--sun); }
+.fig b { display: block; font-weight: 700; }
+.fig span { color: var(--ink-2); font-size: .95rem; }
+.footnote { font-size: .88rem; color: var(--ink-2); margin: 18px 0 0; }
+@media (max-width: 860px) { .split { grid-template-columns: 1fr; } }
+@media (max-width: 440px) { .fig { grid-template-columns: 1fr; gap: 4px; } }
+
+/* How it works */
+.how { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 5vw, 64px); align-items: center; margin-top: 36px; }
+.diagram { background: var(--card); border-radius: var(--r); padding: 20px; }
+.diagram svg { width: 100%; height: auto; }
+.diagram text { font: 600 13px var(--sans); fill: var(--ink); }
+.diagram .sub { font-weight: 400; font-size: 11.5px; fill: var(--ink-2); }
+.diagram .loop { fill: none; stroke: var(--river); stroke-width: 6; stroke-linecap: round; }
+.diagram .flow { fill: none; stroke: #fff; stroke-width: 2; stroke-dasharray: 2 14; stroke-linecap: round; animation: flow 1.6s linear infinite; }
+@keyframes flow { to { stroke-dashoffset: -32; } }
+@media (prefers-reduced-motion: reduce) { .diagram .flow { animation: none; } }
+.diagram .box { fill: var(--cream-2); stroke: var(--rule); }
+.diagram .well { fill: none; stroke: var(--olive); stroke-width: 2.5; stroke-dasharray: 5 5; }
+.steps-how { list-style: none; counter-reset: s; padding: 0; margin: 0; }
+.steps-how li { counter-increment: s; position: relative; padding: 0 0 22px 56px; }
+.steps-how li::before { content: counter(s); position: absolute; left: 0; top: -2px; width: 38px; height: 38px; display: grid; place-items: center; border-radius: 50%; background: var(--sun-soft); color: var(--sun); font: 400 1.3rem/1 var(--serif); }
+.steps-how p { color: var(--ink-2); margin: 0; }
+@media (max-width: 860px) { .how { grid-template-columns: 1fr; } }
+
+.compare { margin-top: 56px; overflow-x: auto; border-radius: var(--r); background: var(--card); }
+.compare table { width: 100%; border-collapse: collapse; min-width: 640px; }
+.compare th, .compare td { text-align: left; padding: 15px 20px; border-bottom: 1px solid var(--rule); vertical-align: top; font-size: .97rem; }
+.compare thead th { font-size: .8rem; letter-spacing: .07em; text-transform: uppercase; color: var(--ink-2); font-weight: 700; }
+.compare tbody th { width: 17%; }
+.compare td.them { color: var(--ink-2); }
+.compare td.us { background: color-mix(in srgb, var(--olive) 9%, transparent); font-weight: 500; }
+.compare thead .us { color: var(--olive); }
+.compare tr:last-child > * { border-bottom: 0; }
+
+/* Commitments */
+.promises { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; margin-top: 40px; list-style: none; padding: 0; counter-reset: p; }
+.promises li { counter-increment: p; background: var(--card); border-radius: var(--r); padding: 26px; border: 1px solid var(--rule); display: flex; flex-direction: column; }
+.promises li::before { content: counter(p); font: 400 2.2rem/1 var(--serif); color: var(--sun); margin-bottom: 12px; }
+.promises p { color: var(--ink-2); font-size: .97rem; }
+.promises .check { margin: auto 0 0; padding-top: 14px; border-top: 1px dashed var(--rule); font-size: .9rem; color: var(--ink); }
+.promises .check b { color: var(--olive); }
+.after { margin-top: 28px; }
+.after .btn { background: var(--olive); color: #fff; }
+.after .btn:hover { background: var(--olive-2); }
+
+/* Community mosaic */
+.community { background: var(--cream-2); }
+.mosaic { display: grid; grid-template-columns: 1.4fr 1fr 1fr; grid-template-rows: 260px 260px; gap: 14px; margin-top: 40px; }
+.mosaic figure { margin: 0; position: relative; border-radius: var(--r); overflow: hidden; background: var(--rule); }
+.mosaic img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s; }
+.mosaic figure:hover img { transform: scale(1.04); }
+.mosaic figure:first-child { grid-row: span 2; }
+.mosaic figure:nth-child(4) { grid-column: span 2; }
+.mosaic figcaption { position: absolute; left: 12px; bottom: 12px; right: 12px; display: flex; flex-direction: column; background: rgba(20,30,24,.72); backdrop-filter: blur(4px); color: #fff; padding: 10px 14px; border-radius: 12px; font-size: .85rem; }
+.mosaic figcaption b { font-size: 1rem; }
+@media (max-width: 860px) { .mosaic { grid-template-columns: 1fr 1fr; grid-template-rows: 300px 220px 220px; } .mosaic figure:first-child { grid-row: auto; grid-column: span 2; } .mosaic figure:nth-child(4) { grid-column: auto; } }
+@media (max-width: 520px) { .mosaic { grid-template-columns: 1fr; grid-template-rows: none; grid-auto-rows: 260px; } .mosaic figure:first-child { grid-column: auto; } }
+
+/* Process */
+.road { list-style: none; padding: 0; margin: 44px 0 0; display: grid; grid-template-columns: repeat(6, 1fr); gap: 0; position: relative; }
+.road::before { content: ""; position: absolute; left: 0; right: 0; top: 13px; height: 3px; background: var(--rule); border-radius: 3px; }
+.road li { position: relative; padding: 40px 14px 0 0; }
+.road li::before { content: ""; position: absolute; left: 0; top: 4px; width: 22px; height: 22px; border-radius: 50%; background: var(--cream); border: 3px solid var(--rule); }
+.road li.done::before { background: var(--olive); border-color: var(--olive); }
+.road li.now::before { background: var(--sun); border-color: var(--sun); box-shadow: 0 0 0 7px var(--sun-soft); }
+.road .when { font-size: .78rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-2); }
+.road .now .when { color: var(--sun); }
+.road h3 { font-size: 1rem; margin: 4px 0; }
+.road p { font-size: .9rem; color: var(--ink-2); margin: 0; }
+@media (max-width: 900px) {
+  .road { grid-template-columns: 1fr; }
+  .road::before { left: 10px; right: auto; top: 0; bottom: 0; width: 3px; height: auto; }
+  .road li { padding: 0 0 22px 44px; }
+  .road li::before { top: 2px; }
+}
+
+/* FAQ */
+.faq-wrap { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(28px, 5vw, 72px); align-items: start; }
+.faq-wrap .side { position: sticky; top: 100px; }
+.faq details { background: var(--card); border: 1px solid var(--rule); border-radius: 14px; margin-bottom: 10px; }
+.faq summary { list-style: none; cursor: pointer; padding: 18px 54px 18px 22px; font-weight: 600; position: relative; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: ""; position: absolute; right: 22px; top: 50%; width: 10px; height: 10px; border-right: 2.5px solid var(--sun); border-bottom: 2.5px solid var(--sun); transform: translateY(-70%) rotate(45deg); transition: transform .2s; }
+.faq details[open] summary::after { transform: translateY(-30%) rotate(-135deg); }
+.faq details p { padding: 0 22px 18px; margin: 0; color: var(--ink-2); }
+@media (max-width: 860px) { .faq-wrap { grid-template-columns: 1fr; } .faq-wrap .side { position: static; } }
+
+/* Contact */
+.contact { background: var(--olive-2); color: var(--on-dark); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .contact { background: #1f2c22; } }
+:root[data-theme="dark"] .contact { background: #1f2c22; }
+.contact h2 { color: #fff; }
+.contact .intro { color: #c9d3c8; }
+.ways { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 36px 0 28px; }
+.ways a { display: block; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.14); border-radius: var(--r); padding: 24px; color: inherit; text-decoration: none; transition: background .15s; }
+.ways a:hover { background: rgba(255,255,255,.12); }
+.ways h3 { font: 400 1.45rem/1.15 var(--serif); color: #fff; }
+.ways p { color: #c9d3c8; font-size: .95rem; }
+.ways span { color: #f6b77a; font-weight: 700; font-size: .92rem; }
+.addr { display: flex; flex-wrap: wrap; gap: 8px 28px; color: #c9d3c8; font-size: .95rem; }
+.addr a { color: #fff; }
+@media (max-width: 860px) { .ways { grid-template-columns: 1fr; } }
+
+footer { background: #141c17; color: #9eaaa1; padding: 34px 0; font-size: .88rem; }
+footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 24px; }
+footer b { color: #eef0ea; }
+footer p { margin: 0; }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Riverbank Technology Center, home">
+      <svg width="36" height="36" viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="18" fill="var(--olive)"/><path d="M6 22c4 0 4-3 8-3s4 3 8 3 4-3 8-3" stroke="#f6b77a" stroke-width="2.4" fill="none" stroke-linecap="round"/><path d="M10 16v-5l4 3v-3l4 3v-3l4 3v-3l4 3v2" stroke="#fff" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+      <span><b>Riverbank Technology Center</b><small>Aemetis &times; Spartan</small></span>
+    </a>
+    <button class="menu" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav id="nav" class="nav" aria-label="Primary">
+      <a href="#story">The old plant</a>
+      <a href="#numbers">The numbers</a>
+      <a href="#promises">Our promises</a>
+      <a href="#process">What's next</a>
+      <a href="#faq">FAQ</a>
+      <a class="btn" href="#contact">Ask a question</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="top">
+  <img src="../../img/aerial.jpg" alt="Aerial view of the Riverbank Industrial Complex: long sawtooth-roof plant buildings, rail spurs, and parking, with farmland beyond" width="2000" height="1120" fetchpriority="high">
+  <div class="wrap">
+    <p class="pill"><i aria-hidden="true"></i> Under City Council review &middot; <a href="#process">Here's what happens next</a></p>
+    <h1>The old plant, <em>back to work.</em></h1>
+    <p class="lede">Riverbank Technology Center would put computers inside buildings that already stand at the former Army ammunition plant on Claus Road. No city water. No new strain on the local grid. No generators running day to day.</p>
+    <div class="ctas">
+      <a class="btn" href="#numbers">Get the facts in 2 minutes</a>
+      <a class="btn ghost" href="assets/RTC-Responsible-Development-Commitments.pdf">Read our commitments</a>
+    </div>
+  </div>
+  <span class="credit">5300 Claus Rd, Riverbank, CA</span>
+</section>
+
+<nav class="answers" aria-label="Questions neighbors ask first">
+  <div class="wrap">
+    <a href="#how"><p class="q">Will it use Riverbank's water?</p><p class="a">No city water.</p><span class="more">How the cooling works &rarr;</span></a>
+    <a href="#how"><p class="q">Will my electric bill go up?</p><p class="a">Designed not to.</p><span class="more">Where the power comes from &rarr;</span></a>
+    <a href="#faq"><p class="q">Will I hear it?</p><p class="a">200+ ft back, indoors.</p><span class="more">About noise &rarr;</span></a>
+    <a href="#numbers"><p class="q">What does Riverbank get?</p><p class="a">$10M+ a year in taxes.</p><span class="more">Where the money goes &rarr;</span></a>
+  </div>
+</nav>
+
+<section class="sec" id="story">
+  <div class="wrap story">
+    <div class="stack">
+      <img src="../../img/interior.jpg" alt="Interior of a large existing industrial building at the complex, with high ceilings and equipment on the floor" width="624" height="303" loading="lazy">
+      <div class="badge"><b>0</b><span>new buildings. Equipment goes inside spaces like this one.</span></div>
+    </div>
+    <div>
+      <p class="kicker">The old plant</p>
+      <h2>Built for heavy industry. <em>Ready for its next job.</em></h2>
+      <p class="intro">The Riverbank Industrial Complex has the big buildings, the industrial zoning, and the power lines that heavy manufacturing left behind. Using them means nothing gets built on farmland or land that could hold homes.</p>
+      <ol class="history">
+        <li><span class="yr">1940s</span><p>Aluminum smelter, then U.S. Army ammunition casing production.</p></li>
+        <li><span class="yr">2022</span><p>Aemetis becomes master developer of the complex, now home to 37 tenants.</p></li>
+        <li><span class="yr">Next</span><p>RTC would move a modular, medium-sized computing facility into existing buildings more than 200 ft from the street.</p></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="sec numbers" id="numbers">
+  <div class="wrap">
+    <p class="kicker">The numbers</p>
+    <h2>What it takes, <em>and what it gives.</em></h2>
+    <div class="split">
+      <div class="panel takes">
+        <h3>What it takes from Riverbank</h3>
+        <div class="figs">
+          <div class="fig"><span class="n">0</span><div><b>Gallons of city water</b><span>The cooling loop is filled once from existing non-drinkable on-site wells, not the city system.</span></div></div>
+          <div class="fig"><span class="n">0</span><div><b>New buildings</b><span>Everything goes inside existing industrial buildings.</span></div></div>
+          <div class="fig"><span class="n">0</span><div><b>Generators running</b><span>No diesel generators or gas turbines for day-to-day power.</span></div></div>
+        </div>
+      </div>
+      <div class="panel gives">
+        <h3>What Riverbank gets back</h3>
+        <div class="figs">
+          <div class="fig"><span class="n">$10M+</span><div><b>Property tax per year</b><span>New revenue for Stanislaus County and Riverbank.</span></div></div>
+          <div class="fig"><span class="n">$5M+</span><div><b>For local schools</b><span>Every year, from that same property tax.</span></div></div>
+          <div class="fig"><span class="n">100s</span><div><b>Construction jobs</b><span>Plus lasting local service jobs once it's running.</span></div></div>
+        </div>
+      </div>
+    </div>
+    <p class="footnote">Property tax also funds fire protection, libraries, and parks. The assumptions behind each estimate are listed in the commitments PDF.</p>
+  </div>
+</section>
+
+<section class="sec" id="how">
+  <div class="wrap">
+    <p class="kicker">How it works</p>
+    <h2>Same water, <em>around and around.</em></h2>
+    <p class="intro">Most of the data centers in the news cool with evaporation, which uses water constantly. RTC uses a sealed loop instead.</p>
+    <div class="how">
+      <figure class="diagram" style="margin:0">
+        <svg viewBox="0 0 440 260" role="img" aria-labelledby="dT dD"><title id="dT">Closed-loop cooling diagram</title><desc id="dD">An on-site well fills a closed loop once. Water then circulates between the computers inside the existing building and air-cooled chillers outside.</desc>
+          <rect x="20" y="170" width="96" height="60" rx="12" class="box"/>
+          <text x="68" y="196" text-anchor="middle">On-site well</text><text x="68" y="214" text-anchor="middle" class="sub">one-time fill</text>
+          <path d="M68 170 V130 H120" class="well"/>
+          <rect x="120" y="40" width="300" height="180" rx="90" class="loop"/>
+          <rect x="120" y="40" width="300" height="180" rx="90" class="flow"/>
+          <rect x="156" y="98" width="106" height="64" rx="12" fill="var(--river)"/>
+          <text x="209" y="126" text-anchor="middle" fill="#fff" style="fill:#fff">Computers</text><text x="209" y="144" text-anchor="middle" class="sub" style="fill:#dfeef5">indoors</text>
+          <rect x="282" y="98" width="106" height="64" rx="12" fill="var(--sun)"/>
+          <text x="335" y="126" text-anchor="middle" style="fill:#1e2a24">Air-cooled</text><text x="335" y="144" text-anchor="middle" class="sub" style="fill:#1e2a24">chillers</text>
+        </svg>
+      </figure>
+      <ol class="steps-how">
+        <li><h3>Fill once</h3><p>Recycled, non-drinkable water from wells already on the site. Not city water, and not farm water.</p></li>
+        <li><h3>Circulate</h3><p>The water carries heat from the computers to low-noise chillers, which cool it with air, then sends it back.</p></li>
+        <li><h3>Power from existing lines</h3><p>Electricity comes from outside the Riverbank area, including hydroelectric, over lines built for the site's old heavy industry. RTC pays for any upgrades, not ratepayers.</p></li>
+      </ol>
+    </div>
+    <div class="compare">
+      <table>
+        <caption class="sr-only">Typical hyperscale data center compared with Riverbank Technology Center</caption>
+        <thead><tr><th scope="col"><span class="sr-only">Topic</span></th><th scope="col">Typical mega data center</th><th scope="col" class="us">Riverbank Technology Center</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Land</th><td class="them">New buildings, often on farmland</td><td class="us">Existing buildings on land already zoned industrial</td></tr>
+          <tr><th scope="row">Size</th><td class="them">Hundreds of megawatts, many buildings</td><td class="us">Medium-sized and modular</td></tr>
+          <tr><th scope="row">Water</th><td class="them">Evaporative cooling, millions of gallons a year</td><td class="us">Closed loop, filled once</td></tr>
+          <tr><th scope="row">Power</th><td class="them">Often needs new generation or transmission</td><td class="us">Existing grid capacity</td></tr>
+          <tr><th scope="row">Generators</th><td class="them">Banks of diesel generators or turbines</td><td class="us">None running day to day</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="promises" style="padding-top:0">
+  <div class="wrap">
+    <p class="kicker">Responsible development</p>
+    <h2>Seven promises. <em>Here's how to check us.</em></h2>
+    <p class="intro">Written for neighbors, city leaders, and Stanislaus County officials.</p>
+    <ol class="promises">
+      <li><h3>Protect the grid and your rates</h3><p>Use existing transmission capacity and pay for any on-site upgrades.</p><p class="check"><b>Check:</b> interconnection agreements on file with the city.</p></li>
+      <li><h3>Use water responsibly</h3><p>No City of Riverbank water. One-time fill of recycled well water.</p><p class="check"><b>Check:</b> metered well use, published every year.</p></li>
+      <li><h3>Keep it clean and quiet</h3><p>Equipment indoors, low-noise chillers, no generators running day to day.</p><p class="check"><b>Check:</b> property-line noise readings, published.</p></li>
+      <li><h3>Respect the neighbors</h3><p>Existing buildings, 200+ ft from the street, on industrial land.</p><p class="check"><b>Check:</b> site plan on file with the city.</p></li>
+      <li><h3>Keep talking</h3><p>Regular public updates and a named contact who answers every question.</p><p class="check"><b>Check:</b> meetings and past Q&amp;A posted here.</p></li>
+      <li><h3>Show our math</h3><p>Plain-language figures on taxes, jobs, and local spending.</p><p class="check"><b>Check:</b> sources listed in the commitments PDF.</p></li>
+      <li><h3>Follow through</h3><p>A public report on every commitment, every year.</p><p class="check"><b>Check:</b> annual reports posted on this site.</p></li>
+    </ol>
+    <div class="after"><a class="btn" href="assets/RTC-Responsible-Development-Commitments.pdf">Download the full commitments (PDF)</a></div>
+  </div>
+</section>
+
+<section class="sec community">
+  <div class="wrap">
+    <p class="kicker">Rooted in Riverbank</p>
+    <h2>Neighbors <em>before</em> this project.</h2>
+    <p class="intro">Aemetis has supported local events, education, and families in Riverbank for years.</p>
+    <div class="mosaic">
+      <figure><img src="../../img/fourth-of-july.jpg" alt="Families at a Fourth of July celebration in a Riverbank park, with red, white, and blue balloons" width="1000" height="754" loading="lazy"><figcaption><b>Fourth of July</b>Community celebration</figcaption></figure>
+      <figure><img src="../../img/united-we-float.jpg" alt="Aemetis staff and community members with donated life jackets for United We Float" width="674" height="900" loading="lazy"><figcaption><b>United We Float</b>Life jacket donations</figcaption></figure>
+      <figure><img src="../../img/police-bikes.jpg" alt="Riverbank Police Services officers with donated children's bikes" width="272" height="363" loading="lazy" style="object-position:50% 30%"><figcaption><b>Police Partnership</b>Bikes for local kids</figcaption></figure>
+      <figure><img src="../../img/bike-ride.jpg" alt="Children and families riding bikes down a Riverbank street" width="677" height="900" loading="lazy" style="object-position:50% 45%"><figcaption><b>Community Bike Ride</b>Families &amp; kids</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="process">
+  <div class="wrap">
+    <p class="kicker">Public process</p>
+    <h2>Where things stand, <em>and where you come in.</em></h2>
+    <p class="intro">Riverbank's City Council is reviewing data center proposals. Every step ahead includes a chance for residents to weigh in.</p>
+    <ol class="road">
+      <li class="done"><span class="when">2022</span><h3>Aemetis takes on the complex</h3></li>
+      <li class="done"><span class="when">2026</span><h3>Proposal &amp; commitments published</h3></li>
+      <li class="now"><span class="when">Now</span><h3>City Council review</h3><p>Watch city agendas for public comment.</p></li>
+      <li><span class="when">Next</span><h3>Community meetings</h3><p>Open-house Q&amp;A and environmental review.</p></li>
+      <li><span class="when">Later</span><h3>Permits, then construction</h3></li>
+      <li><span class="when">Ongoing</span><h3>Annual public reports</h3></li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec faq" id="faq" style="padding-top:0">
+  <div class="wrap faq-wrap">
+    <div class="side">
+      <p class="kicker">FAQ</p>
+      <h2>Straight answers <em>to fair questions.</em></h2>
+      <p class="intro">Don't see yours? <a href="#contact">Ask us</a> and we'll add the answer here.</p>
+    </div>
+    <div>
+      <details><summary>Didn't the city pause data center projects?</summary><p>Yes. In September 2026 the City Council adopted a temporary moratorium to study data center proposals. We support a careful review, and we've published our commitments so the Council and residents can judge this project on its specifics.</p></details>
+      <details><summary>How much water will it use, and where does it come from?</summary><p>The closed cooling loop gets a one-time fill of recycled, non-drinkable water from existing on-site wells that aren't connected to Riverbank's municipal system. After that the water recirculates. There's no continuous draw for cooling.</p></details>
+      <details><summary>Will my electricity rates go up?</summary><p>RTC uses transmission capacity already built for the site's former heavy industry and pays for any on-site upgrades it needs. It doesn't ask ratepayers or taxpayers to fund new capacity.</p></details>
+      <details><summary>How loud will it be?</summary><p>All computing equipment is indoors, more than 200 ft from the street. The chillers are low-noise, and no turbines or generators run day to day. Noise stays below the levels already allowed in this industrial zone.</p></details>
+      <details><summary>What is a "Sustainable Computing Facility"?</summary><p>Our name for a computing facility that meets five standards: no continuous cooling water, power from existing grid capacity, reuse of existing buildings, industrial rather than agricultural land, and recurring local tax revenue.</p></details>
+      <details><summary>Why Riverbank?</summary><p>The complex already has large industrial buildings, industrial zoning, and underused grid connections. Using them avoids building on farmland or land that could be used for housing.</p></details>
+      <details><summary>Who are Aemetis and Spartan?</summary><p>Aemetis produces renewable fuels and low-carbon energy and has been master developer of the Riverbank Industrial Complex since 2022. Spartan designs and delivers modular computing facilities.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="sec contact" id="contact">
+  <div class="wrap">
+    <p class="kicker" style="color:#f6b77a">Get in touch</p>
+    <h2>Ask us anything.</h2>
+    <p class="intro">A real person reads every message.</p>
+    <div class="ways">
+      <a href="mailto:Community@aemetis.com?subject=RTC%20community%20question"><h3>Neighbors</h3><p>Project questions, education programs, local events.</p><span>Email a question &rarr;</span></a>
+      <a href="mailto:Community@aemetis.com?subject=RTC%20partnership%20inquiry"><h3>Business &amp; partners</h3><p>Partnership and site inquiries.</p><span>Contact us &rarr;</span></a>
+      <a href="mailto:Community@aemetis.com?subject=Add%20me%20to%20RTC%20updates"><h3>Stay updated</h3><p>Meetings, milestones, and annual reports.</p><span>Join the list &rarr;</span></a>
+    </div>
+    <p class="addr"><a href="mailto:Community@aemetis.com">Community@aemetis.com</a><a href="https://www.google.com/maps/search/?api=1&amp;query=5300+Claus+Rd+Riverbank+CA+95367">5300 Claus Rd, Riverbank, CA 95367</a></p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><b>Riverbank Technology Center</b> &middot; A joint project of Aemetis &amp; Spartan</p>
+    <p>&copy; 2026 Riverbank Technology Center. Company names and marks are the property of their respective owners.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var btn = document.querySelector('.menu'), nav = document.getElementById('nav');
+  btn.addEventListener('click', function () {
+    var open = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!open));
+    nav.classList.toggle('open', !open);
+  });
+  nav.addEventListener('click', function (e) {
+    if (e.target.closest('a')) { btn.setAttribute('aria-expanded', 'false'); nav.classList.remove('open'); }
+  });
+})();
+</script>
+<!-- Preview-only: link back to the hub. Remove when this direction goes live. -->
+<a href="../../" style="position:fixed;left:16px;bottom:16px;z-index:999;background:#1a1f1c;color:#fff;font:600 13px/1 system-ui,sans-serif;padding:10px 14px;border-radius:999px;text-decoration:none;box-shadow:0 6px 20px rgba(0,0,0,.3)">&larr; All previews</a>
+</body>
+</html>

@@ -2,615 +2,134 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Riverbank Technology Center</title>
-<meta name="description" content="Riverbank Technology Center: computing inside existing buildings at the Riverbank Industrial Complex. No city water, no new local grid capacity, no generators running day to day.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RTC Redesign Previews</title>
+<meta name="description" content="Three design directions for the riverbanktc.com redesign. Pick one to replace the current site.">
+<meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
 <style>
-/* Layout: industrial spec-sheet. Dark "plant" bands with technical linework, ruled ledgers instead of cards, safety-yellow used only for markings. */
 :root {
-  --paper: #f3f4f0;
-  --paper-2: #e6e8e2;
-  --ink: #141d23;
-  --ink-2: #4a5761;
-  --rule: #c6ccc6;
-  --river: #24639f;
-  --hv: #f2c21b;
-  --band: #141d23;
-  --band-2: #1d2a33;
-  --on-band: #edf0eb;
-  --on-band-2: #a9b6be;
-  --band-rule: #34434e;
-  --display: "Big Shoulders Display", "Arial Narrow", Impact, sans-serif;
-  --body: "Public Sans", "Helvetica Neue", Arial, sans-serif;
-  --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --bg: #f5f3ee; --card: #fff; --ink: #1a1f1c; --ink-2: #5b635e; --rule: #e1ddd3; --accent: #1f5f5b;
+  --sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
 }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
-  --paper: #10171c; --paper-2: #162028; --ink: #e9ede7; --ink-2: #9eacb5; --rule: #2a3741;
-  --river: #6aa5de; --band: #0a0f13; --band-2: #121b22; --band-rule: #26333d; color-scheme: dark;
+  --bg: #121513; --card: #1b1f1c; --ink: #eceeea; --ink-2: #a3aaa5; --rule: #2c312d; --accent: #7cc4bd; color-scheme: dark;
 } }
 :root[data-theme="dark"] {
-  --paper: #10171c; --paper-2: #162028; --ink: #e9ede7; --ink-2: #9eacb5; --rule: #2a3741;
-  --river: #6aa5de; --band: #0a0f13; --band-2: #121b22; --band-rule: #26333d; color-scheme: dark;
+  --bg: #121513; --card: #1b1f1c; --ink: #eceeea; --ink-2: #a3aaa5; --rule: #2c312d; --accent: #7cc4bd; color-scheme: dark;
 }
-
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 72px; }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-body { margin: 0; background: var(--paper); color: var(--ink); font: 400 17px/1.6 var(--body); -webkit-font-smoothing: antialiased; }
-a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 4px; }
-:focus-visible { outline: 3px solid var(--hv); outline-offset: 3px; }
-p { margin: 0; }
-h1, h2, h3 { margin: 0; text-wrap: balance; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 16px/1.6 var(--sans); -webkit-font-smoothing: antialiased; }
+a { color: var(--accent); }
 .wrap { width: min(1200px, 100% - 32px); margin-inline: auto; }
-.mono { font: 600 .74rem/1.4 var(--mono); letter-spacing: .08em; text-transform: uppercase; }
-.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
-
-/* concept label */
-.concept { background: var(--hv); color: #141d23; padding-block: 8px; text-align: center; }
-
-/* header */
-.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: var(--band); color: var(--on-band); border-bottom: 1px solid var(--band-rule); }
-.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 60px; }
-.mark { display: flex; align-items: baseline; gap: 12px; text-decoration: none; }
-.mark b { font: 800 1.35rem/1 var(--display); letter-spacing: .02em; text-transform: uppercase; }
-.mark span { color: var(--on-band-2); }
-.nav { display: flex; gap: 26px; align-items: center; }
-.nav a { text-decoration: none; font-weight: 500; font-size: .93rem; color: var(--on-band); }
-.nav a:hover { color: var(--hv); }
-.nav .ask { white-space: nowrap; border: 1.5px solid var(--hv); color: var(--hv); padding: 6px 14px; }
-.nav .ask:hover { background: var(--hv); color: #141d23; }
-@media (max-width: 920px) { .nav a:not(.ask) { display: none; } .mark span { display: none; } }
-
-/* hero */
-.hero { background: var(--band); color: var(--on-band); padding-block: clamp(40px, 6vw, 72px) 0; overflow: hidden; }
-.hero .status { color: var(--hv); display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
-.hero .status i { width: 9px; height: 9px; background: var(--hv); display: inline-block; animation: blink 2.4s steps(2) infinite; }
-@keyframes blink { 50% { opacity: .2; } }
-@media (prefers-reduced-motion: reduce) { .hero .status i { animation: none; } }
-.hero h1 { font: 900 clamp(3rem, 8.4vw, 7.4rem)/.9 var(--display); text-transform: uppercase; letter-spacing: -.005em; margin: 22px 0 26px; max-width: 13ch; }
-.hero h1 em { font-style: normal; color: var(--hv); }
-.hero-row { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 32px 56px; align-items: end; }
-.hero .lede { font-size: 1.12rem; color: var(--on-band-2); max-width: 54ch; }
-.hero .lede strong { color: var(--on-band); font-weight: 600; }
-.ctas { display: flex; flex-wrap: wrap; gap: 12px; }
-.btn { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; text-decoration: none; padding: 14px 20px; border: 2px solid var(--hv); background: var(--hv); color: #141d23; }
-.btn:hover { background: transparent; color: var(--hv); }
-.btn.line { background: transparent; color: var(--on-band); border-color: var(--band-rule); }
-.btn.line:hover { border-color: var(--hv); color: var(--hv); }
-.btn.dark { background: var(--ink); border-color: var(--ink); color: var(--paper); }
-.btn.dark:hover { background: transparent; color: var(--ink); }
-@media (max-width: 860px) { .hero-row { grid-template-columns: 1fr; } }
-
-.drawing { margin-top: clamp(32px, 5vw, 56px); overflow-x: auto; }
-.cutaway { display: block; width: 100%; min-width: 680px; height: auto; }
-.cutaway .hatch { stroke: var(--band-rule); stroke-width: 1.5; }
-.cutaway .ln-strong { stroke: var(--on-band-2); stroke-width: 1.5; }
-.cutaway .fill-road, .plan .fill-road { fill: var(--band-rule); }
-.cutaway .bldg { fill: var(--band-2); stroke: var(--on-band-2); stroke-width: 1.5; }
-.cutaway .roof { fill: var(--band-2); stroke: var(--on-band-2); stroke-width: 1.5; stroke-linejoin: round; }
-.cutaway .glaze { stroke: var(--on-band-2); stroke-width: 1; stroke-dasharray: 2 4; }
-.cutaway .rack { fill: var(--band); stroke: var(--river); stroke-width: 1.5; }
-.cutaway .rack-ln { stroke: var(--river); stroke-width: 1.5; }
-.cutaway .chiller { fill: var(--band); stroke: var(--on-band-2); stroke-width: 1.5; }
-.cutaway .fan { fill: none; stroke: var(--on-band-2); stroke-width: 1.2; }
-.cutaway .loop { fill: none; stroke: #6aa5de; stroke-width: 3; stroke-dasharray: 10 6; animation: flow 1.6s linear infinite; }
-.cutaway .loop-ret { animation-direction: reverse; opacity: .7; }
-@keyframes flow { to { stroke-dashoffset: -32; } }
-@media (prefers-reduced-motion: reduce) { .cutaway .loop { animation: none; } }
-.cutaway .well { stroke: #6aa5de; stroke-width: 3; }
-.cutaway .dim, .plan .dim { stroke: var(--hv); stroke-width: 1.5; }
-.cutaway .leader { fill: none; stroke: var(--hv); stroke-width: 1; }
-.fill-hv { fill: var(--hv); }
-.cutaway .lbl { font: 600 11.5px var(--mono); letter-spacing: .06em; fill: var(--on-band-2); }
-.cutaway .lbl-hv { fill: var(--on-band); }
-
-/* sections */
-.sec { padding-block: clamp(64px, 9vw, 112px); border-top: 1px solid var(--rule); }
-.sec-head { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 16px 40px; margin-bottom: clamp(32px, 5vw, 56px); }
-.sec-head .mono { color: var(--ink-2); padding-top: 10px; }
-.sec-head h2 { font: 800 clamp(2.2rem, 4.8vw, 4rem)/.95 var(--display); text-transform: uppercase; max-width: 18ch; }
-.sec-head p:not(.mono) { grid-column: 2; color: var(--ink-2); max-width: 60ch; font-size: 1.06rem; }
-.body-col { margin-left: calc(220px + 40px); }
-@media (max-width: 820px) { .sec-head { grid-template-columns: 1fr; } .sec-head p:not(.mono) { grid-column: 1; } .body-col { margin-left: 0; } }
-
-/* zero ledger */
-.zeros { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 2px solid var(--ink); }
-.zeros > div { padding: 22px 24px 28px 0; border-bottom: 1px solid var(--rule); display: grid; gap: 8px; align-content: start; }
-.zeros > div + div { padding-left: 24px; border-left: 1px solid var(--rule); }
-.zeros .n { font: 900 clamp(4.5rem, 11vw, 9rem)/.82 var(--display); font-variant-numeric: tabular-nums; }
-.zeros .u { font: 800 1.4rem/1 var(--display); text-transform: uppercase; }
-.zeros p { color: var(--ink-2); font-size: .97rem; max-width: 34ch; }
-.gains .n { color: var(--river); }
-@media (max-width: 760px) { .zeros { grid-template-columns: 1fr; } .zeros > div + div { padding-left: 0; border-left: 0; } }
-.zeros + .zeros { margin-top: 40px; }
-
-/* compare */
-.versus { overflow-x: auto; }
-.versus table { width: 100%; min-width: 640px; border-collapse: collapse; }
-.versus th, .versus td { text-align: left; vertical-align: top; padding: 16px 20px 16px 0; border-bottom: 1px solid var(--rule); }
-.versus thead th { border-bottom: 2px solid var(--ink); }
-.versus tbody th { width: 20%; font-weight: 700; }
-.versus td.them { color: var(--ink-2); width: 38%; }
-.versus td.us { font-weight: 600; position: relative; padding-left: 26px; }
-.versus td.us::before { content: ""; position: absolute; left: 0; top: 24px; width: 12px; height: 3px; background: var(--hv); }
-.versus thead .us-h { padding-left: 26px; }
-
-/* commitments */
-.commit { list-style: none; margin: 0; padding: 0; border-top: 2px solid var(--ink); counter-reset: c; }
-.commit li { counter-increment: c; display: grid; grid-template-columns: 80px minmax(0, 1.1fr) minmax(0, 1.3fr) minmax(0, 1fr); gap: 12px 28px; padding-block: 22px; border-bottom: 1px solid var(--rule); }
-.commit li::before { content: counter(c, decimal-leading-zero); font: 800 2rem/1 var(--display); color: var(--ink-2); }
-.commit h3 { font-size: 1.06rem; font-weight: 700; line-height: 1.35; }
-.commit p { color: var(--ink-2); font-size: .97rem; }
-.commit .proof { font-size: .93rem; color: var(--ink); }
-.commit .proof .mono { display: block; color: var(--river); margin-bottom: 4px; }
-@media (max-width: 900px) { .commit li { grid-template-columns: 56px minmax(0, 1fr); } .commit li > :not(h3) { grid-column: 2; } }
-.after { margin-top: 28px; }
-
-/* site */
-.site-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); gap: 40px 56px; align-items: start; }
-.facts-list { margin: 0; display: grid; }
-.facts-list div { display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: 16px; padding-block: 14px; border-bottom: 1px solid var(--rule); }
-.facts-list div:first-child { border-top: 2px solid var(--ink); }
-.facts-list dt { color: var(--ink-2); padding-top: 3px; }
-.facts-list dd { margin: 0; }
-.plan-fig { margin: 0; }
-.plan { width: 100%; height: auto; display: block; background: var(--paper-2); }
-.plan .gridln { fill: none; stroke: var(--rule); stroke-width: .6; }
-.plan .bound { fill: none; stroke: var(--ink-2); stroke-width: 1.2; stroke-dasharray: 7 5; }
-.plan .other rect { fill: var(--paper); stroke: var(--ink-2); stroke-width: 1; }
-.plan .rtc { fill: var(--ink); }
-.plan .plan-rtc { font: 900 34px var(--display); fill: var(--paper); }
-.plan .lbl { font: 600 11px var(--mono); letter-spacing: .06em; fill: var(--ink-2); }
-.plan .lbl-inv { fill: var(--paper); }
-.plan .lbl-strong { fill: #141d23; }
-.plan .tag { fill: var(--hv); }
-.plan .fill-ink { fill: var(--ink); }
-.plan-fig figcaption { margin-top: 10px; color: var(--ink-2); }
-.maplink { display: inline-block; margin-top: 22px; font-weight: 600; }
-@media (max-width: 860px) { .site-grid { grid-template-columns: 1fr; } }
-
-/* water & power */
-.wp { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0; border-top: 2px solid var(--ink); }
-.wp > div { padding: 26px 32px 8px 0; }
-.wp > div + div { padding-left: 32px; border-left: 1px solid var(--rule); }
-.wp h3 { font: 800 1.9rem/1 var(--display); text-transform: uppercase; margin-bottom: 18px; }
-.wp ul { list-style: none; margin: 0; padding: 0; }
-.wp li { padding: 12px 0 12px 26px; border-bottom: 1px solid var(--rule); position: relative; }
-.wp li::before { content: ""; position: absolute; left: 0; top: 22px; width: 12px; height: 3px; background: var(--river); }
-@media (max-width: 760px) { .wp { grid-template-columns: 1fr; } .wp > div + div { padding-left: 0; border-left: 0; } }
-
-/* money band */
-.money { background: var(--band); color: var(--on-band); border-top: 0; }
-.money .sec-head .mono { color: var(--on-band-2); }
-.money .sec-head p { color: var(--on-band-2); }
-.money .zeros { border-top-color: var(--hv); }
-.money .zeros > div { border-color: var(--band-rule); }
-.money .zeros .n { color: var(--hv); }
-.money .zeros p { color: var(--on-band-2); }
-
-/* process */
-.steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); border-top: 2px solid var(--ink); }
-.steps li { padding: 18px 16px 0 0; position: relative; }
-.steps li::before { content: ""; position: absolute; top: -8px; left: 0; width: 14px; height: 14px; background: var(--paper); border: 2px solid var(--ink-2); }
-.steps li.done::before { background: var(--ink); border-color: var(--ink); }
-.steps li.now::before { background: var(--hv); border-color: var(--hv); width: 18px; height: 18px; top: -10px; }
-.steps .mono { color: var(--ink-2); }
-.steps li.now .mono { color: var(--ink); }
-.steps h3 { font-size: 1rem; font-weight: 700; margin-top: 6px; line-height: 1.35; }
-.steps p { color: var(--ink-2); font-size: .92rem; margin-top: 6px; }
-.steps li.now { background: linear-gradient(var(--paper-2), var(--paper-2)) no-repeat 0 0 / calc(100% - 8px) 100%; padding-left: 14px; padding-bottom: 16px; }
-.steps li.now::before { left: 0; }
-@media (max-width: 900px) {
-  .steps { grid-template-columns: 1fr; border-top: 0; border-left: 2px solid var(--ink); }
-  .steps li { padding: 0 0 22px 22px; }
-  .steps li::before { left: -8px; top: 4px; }
-  .steps li.now::before { left: -10px; top: 2px; }
-  .steps li.now { padding: 12px 12px 14px 22px; margin-bottom: 22px; background-size: 100% 100%; }
-}
-
-/* community */
-.events { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; border-top: 2px solid var(--ink); padding-top: 24px; }
-.events img { aspect-ratio: 4 / 5; object-fit: cover; }
-.events figcaption { display: grid; gap: 2px; margin-top: 12px; }
-.events b { font: 800 1.5rem/1 var(--display); text-transform: uppercase; }
-.events .mono { color: var(--ink-2); }
-@media (max-width: 860px) { .events { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-
-/* photos */
-.photo { margin: 0; }
-.photo img { display: block; width: 100%; max-width: 100%; height: auto; filter: saturate(.92); }
-.photo figcaption.mono { margin-top: 10px; color: var(--ink-2); }
-.photo.wide { margin-bottom: 40px; }
-.photo.wide img { aspect-ratio: 16 / 7; object-fit: cover; }
-
-/* faq */
-.faq-grid { display: grid; grid-template-columns: minmax(0, 1fr); border-top: 2px solid var(--ink); }
-.faq-grid details { border-bottom: 1px solid var(--rule); }
-.faq-grid summary { list-style: none; cursor: pointer; display: grid; grid-template-columns: minmax(0, 1fr) 28px; gap: 16px; padding-block: 18px; font-weight: 600; font-size: 1.06rem; }
-.faq-grid summary::-webkit-details-marker { display: none; }
-.faq-grid summary::after { content: "+"; font: 800 1.7rem/1 var(--display); color: var(--ink-2); text-align: right; }
-.faq-grid details[open] summary::after { content: "\2013"; }
-.faq-grid details p { color: var(--ink-2); padding-bottom: 20px; max-width: 70ch; }
-.faq-more { margin-top: 22px; color: var(--ink-2); }
-
-/* contact */
-.contact h2 { font: 900 clamp(3rem, 9vw, 7.4rem)/.88 var(--display); text-transform: uppercase; max-width: 12ch; }
-.contact-row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 44px; border-top: 2px solid var(--ink); }
-.contact-row > div { padding: 22px 24px 4px 0; display: grid; gap: 12px; align-content: start; justify-items: start; }
-.contact-row > div + div { padding-left: 24px; border-left: 1px solid var(--rule); }
-.contact-row h3 { font-size: 1.06rem; }
-.contact-row p { color: var(--ink-2); }
-.addr { margin-top: 36px; display: flex; flex-wrap: wrap; gap: 8px 32px; }
-@media (max-width: 820px) { .contact-row { grid-template-columns: 1fr; } .contact-row > div + div { padding-left: 0; border-left: 0; border-top: 1px solid var(--rule); } }
-
-footer { background: var(--band); color: var(--on-band-2); padding-block: 36px; font-size: .9rem; }
-footer .wrap { display: flex; flex-wrap: wrap; gap: 12px 40px; justify-content: space-between; }
-footer b { color: var(--on-band); font: 800 1.2rem var(--display); text-transform: uppercase; letter-spacing: .02em; }
+header { padding: clamp(40px, 7vw, 80px) 0 32px; }
+.tag { font-size: .78rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); margin: 0 0 12px; }
+h1 { font-size: clamp(2rem, 4.5vw, 3rem); line-height: 1.08; letter-spacing: -.02em; margin: 0 0 14px; }
+.lede { max-width: 64ch; color: var(--ink-2); font-size: 1.08rem; margin: 0; }
+.cur { display: inline-flex; gap: 6px; align-items: center; margin-top: 18px; font-size: .92rem; color: var(--ink-2); }
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; padding-bottom: 40px; }
+@media (max-width: 1000px) { .grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 660px) { .grid { grid-template-columns: 1fr; } }
+.card { background: var(--card); border: 1px solid var(--rule); border-radius: 16px; overflow: hidden; display: flex; flex-direction: column; transition: transform .18s, box-shadow .18s; }
+.card:hover { transform: translateY(-3px); box-shadow: 0 20px 40px -24px rgba(0,0,0,.35); }
+.shot { display: block; aspect-ratio: 16 / 10; overflow: hidden; border-bottom: 1px solid var(--rule); background: var(--rule); }
+.shot img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+.body { padding: 20px 22px 22px; display: flex; flex-direction: column; flex: 1; }
+.letter { display: inline-grid; place-items: center; width: 30px; height: 30px; border-radius: 8px; font-weight: 700; color: #fff; margin-right: 10px; font-size: .95rem; }
+h2 { display: flex; align-items: center; font-size: 1.2rem; margin: 0 0 4px; }
+.feel { font-size: .85rem; font-weight: 600; color: var(--ink-2); margin: 0 0 12px; }
+.body p.desc { color: var(--ink-2); font-size: .95rem; margin: 0 0 14px; }
+.swatches { display: flex; gap: 6px; margin: 0 0 14px; }
+.swatches i { width: 22px; height: 22px; border-radius: 50%; border: 1px solid rgba(0,0,0,.12); }
+.points { list-style: none; padding: 0; margin: 0 0 18px; font-size: .9rem; }
+.points li { padding: 5px 0 5px 20px; position: relative; border-top: 1px solid var(--rule); }
+.points li::before { content: ""; position: absolute; left: 2px; top: 13px; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+.actions { margin-top: auto; display: flex; gap: 10px; flex-wrap: wrap; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; padding: .7em 1.15em; border-radius: 999px; font-weight: 600; font-size: .93rem; text-decoration: none; background: var(--ink); color: var(--bg); }
+.btn.ghost { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 1.5px var(--rule); }
+.btn:hover { opacity: .88; }
+.notes { border-top: 1px solid var(--rule); padding: 32px 0 56px; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+.notes h3 { font-size: 1rem; margin: 0 0 8px; }
+.notes p, .notes li { color: var(--ink-2); font-size: .93rem; }
+.notes ul { padding-left: 18px; margin: 0; }
+@media (max-width: 760px) { .notes { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
-
-
-<header class="top">
-  <div class="wrap">
-    <a class="mark" href="#top"><b>Riverbank Technology Center</b><span class="mono">Aemetis &times; Spartan</span></a>
-    <nav class="nav" aria-label="Primary">
-      <a href="#numbers">The numbers</a>
-      <a href="#commitments">Commitments</a>
-      <a href="#site">The site</a>
-      <a href="#process">Review status</a>
-      <a href="#faq">FAQ</a>
-      <a class="ask" href="#contact">Ask a question</a>
-    </nav>
-  </div>
+<header class="wrap">
+  <p class="tag">riverbanktc.com redesign</p>
+  <h1>Three directions for the new site</h1>
+  <p class="lede">Each preview is a full homepage with the same content: the moratorium and public process up front, plain answers on water, power, and noise, the seven commitments with a way to check each one, and the real site and community photos. Only the look and tone change. Open each one, then pick the direction to build out.</p>
+  <p class="cur">Compare with the current site: <a href="https://www.riverbanktc.com/" target="_blank" rel="noopener">riverbanktc.com &nearr;</a></p>
 </header>
 
-<main>
-<section class="hero" id="top">
-  <div class="wrap">
-    <p class="mono status"><i aria-hidden="true"></i> 5300 Claus Rd, Riverbank &middot; Under City Council review &middot; <a href="#process">What happens next</a></p>
-    <h1>Computing inside the <em>old plant.</em></h1>
-    <div class="hero-row">
-      <p class="lede">Riverbank Technology Center puts computers inside buildings that already stand at the former Army ammunition plant. <strong>It uses no city water, needs no new local grid capacity, and runs no generators day to day.</strong></p>
-      <div class="ctas">
-        <a class="btn" href="#numbers">See the numbers</a>
-        <a class="btn line" href="assets/RTC-Responsible-Development-Commitments.pdf">Commitments PDF</a>
-      </div>
-    </div>
-    <div class="drawing"><svg class="cutaway" viewBox="0 0 1200 440" role="img" aria-labelledby="cutT cutD"><title id="cutT">Cutaway drawing of the facility</title><desc id="cutD">Claus Road on the left. More than 200 feet back sits an existing sawtooth-roof industrial building. Inside are rows of computer racks. Outside on the right are air-cooled chillers connected to the racks by a closed water loop, filled once from an on-site well. No generators.</desc>
-<defs><pattern id="hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="8" class="hatch"/></pattern><marker id="ar" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="fill-hv"/></marker></defs>
-<rect x="0" y="370" width="1200" height="70" fill="url(#hatch)"/>
-<line x1="0" y1="370" x2="1200" y2="370" class="ln-strong"/>
-<rect x="20" y="362" width="120" height="8" class="fill-road"/>
-<text x="80" y="400" class="lbl" text-anchor="middle">CLAUS RD</text>
-<rect x="300" y="200" width="660" height="170" class="bldg"/>
-<polyline points="300,200 300,154 360,200 360,200 360,154 420,200 420,200 420,154 480,200 480,200 480,154 540,200 540,200 540,154 600,200 600,200 600,154 660,200 660,200 660,154 720,200 720,200 720,154 780,200 780,200 780,154 840,200 840,200 840,154 900,200 900,200 900,154 960,200" class="roof"/>
-<line x1="300" y1="200" x2="300" y2="154" class="glaze"/>
-<line x1="360" y1="200" x2="360" y2="154" class="glaze"/>
-<line x1="420" y1="200" x2="420" y2="154" class="glaze"/>
-<line x1="480" y1="200" x2="480" y2="154" class="glaze"/>
-<line x1="540" y1="200" x2="540" y2="154" class="glaze"/>
-<line x1="600" y1="200" x2="600" y2="154" class="glaze"/>
-<line x1="660" y1="200" x2="660" y2="154" class="glaze"/>
-<line x1="720" y1="200" x2="720" y2="154" class="glaze"/>
-<line x1="780" y1="200" x2="780" y2="154" class="glaze"/>
-<line x1="840" y1="200" x2="840" y2="154" class="glaze"/>
-<line x1="900" y1="200" x2="900" y2="154" class="glaze"/>
-<rect x="340" y="260" width="34" height="110" class="rack"/>
-<line x1="346" y1="272" x2="368" y2="272" class="rack-ln"/>
-<line x1="346" y1="289" x2="368" y2="289" class="rack-ln"/>
-<line x1="346" y1="306" x2="368" y2="306" class="rack-ln"/>
-<line x1="346" y1="323" x2="368" y2="323" class="rack-ln"/>
-<line x1="346" y1="340" x2="368" y2="340" class="rack-ln"/>
-<line x1="346" y1="357" x2="368" y2="357" class="rack-ln"/>
-<rect x="392" y="260" width="34" height="110" class="rack"/>
-<line x1="398" y1="272" x2="420" y2="272" class="rack-ln"/>
-<line x1="398" y1="289" x2="420" y2="289" class="rack-ln"/>
-<line x1="398" y1="306" x2="420" y2="306" class="rack-ln"/>
-<line x1="398" y1="323" x2="420" y2="323" class="rack-ln"/>
-<line x1="398" y1="340" x2="420" y2="340" class="rack-ln"/>
-<line x1="398" y1="357" x2="420" y2="357" class="rack-ln"/>
-<rect x="444" y="260" width="34" height="110" class="rack"/>
-<line x1="450" y1="272" x2="472" y2="272" class="rack-ln"/>
-<line x1="450" y1="289" x2="472" y2="289" class="rack-ln"/>
-<line x1="450" y1="306" x2="472" y2="306" class="rack-ln"/>
-<line x1="450" y1="323" x2="472" y2="323" class="rack-ln"/>
-<line x1="450" y1="340" x2="472" y2="340" class="rack-ln"/>
-<line x1="450" y1="357" x2="472" y2="357" class="rack-ln"/>
-<rect x="496" y="260" width="34" height="110" class="rack"/>
-<line x1="502" y1="272" x2="524" y2="272" class="rack-ln"/>
-<line x1="502" y1="289" x2="524" y2="289" class="rack-ln"/>
-<line x1="502" y1="306" x2="524" y2="306" class="rack-ln"/>
-<line x1="502" y1="323" x2="524" y2="323" class="rack-ln"/>
-<line x1="502" y1="340" x2="524" y2="340" class="rack-ln"/>
-<line x1="502" y1="357" x2="524" y2="357" class="rack-ln"/>
-<rect x="548" y="260" width="34" height="110" class="rack"/>
-<line x1="554" y1="272" x2="576" y2="272" class="rack-ln"/>
-<line x1="554" y1="289" x2="576" y2="289" class="rack-ln"/>
-<line x1="554" y1="306" x2="576" y2="306" class="rack-ln"/>
-<line x1="554" y1="323" x2="576" y2="323" class="rack-ln"/>
-<line x1="554" y1="340" x2="576" y2="340" class="rack-ln"/>
-<line x1="554" y1="357" x2="576" y2="357" class="rack-ln"/>
-<rect x="600" y="260" width="34" height="110" class="rack"/>
-<line x1="606" y1="272" x2="628" y2="272" class="rack-ln"/>
-<line x1="606" y1="289" x2="628" y2="289" class="rack-ln"/>
-<line x1="606" y1="306" x2="628" y2="306" class="rack-ln"/>
-<line x1="606" y1="323" x2="628" y2="323" class="rack-ln"/>
-<line x1="606" y1="340" x2="628" y2="340" class="rack-ln"/>
-<line x1="606" y1="357" x2="628" y2="357" class="rack-ln"/>
-<rect x="652" y="260" width="34" height="110" class="rack"/>
-<line x1="658" y1="272" x2="680" y2="272" class="rack-ln"/>
-<line x1="658" y1="289" x2="680" y2="289" class="rack-ln"/>
-<line x1="658" y1="306" x2="680" y2="306" class="rack-ln"/>
-<line x1="658" y1="323" x2="680" y2="323" class="rack-ln"/>
-<line x1="658" y1="340" x2="680" y2="340" class="rack-ln"/>
-<line x1="658" y1="357" x2="680" y2="357" class="rack-ln"/>
-<rect x="704" y="260" width="34" height="110" class="rack"/>
-<line x1="710" y1="272" x2="732" y2="272" class="rack-ln"/>
-<line x1="710" y1="289" x2="732" y2="289" class="rack-ln"/>
-<line x1="710" y1="306" x2="732" y2="306" class="rack-ln"/>
-<line x1="710" y1="323" x2="732" y2="323" class="rack-ln"/>
-<line x1="710" y1="340" x2="732" y2="340" class="rack-ln"/>
-<line x1="710" y1="357" x2="732" y2="357" class="rack-ln"/>
-<rect x="756" y="260" width="34" height="110" class="rack"/>
-<line x1="762" y1="272" x2="784" y2="272" class="rack-ln"/>
-<line x1="762" y1="289" x2="784" y2="289" class="rack-ln"/>
-<line x1="762" y1="306" x2="784" y2="306" class="rack-ln"/>
-<line x1="762" y1="323" x2="784" y2="323" class="rack-ln"/>
-<line x1="762" y1="340" x2="784" y2="340" class="rack-ln"/>
-<line x1="762" y1="357" x2="784" y2="357" class="rack-ln"/>
-<rect x="808" y="260" width="34" height="110" class="rack"/>
-<line x1="814" y1="272" x2="836" y2="272" class="rack-ln"/>
-<line x1="814" y1="289" x2="836" y2="289" class="rack-ln"/>
-<line x1="814" y1="306" x2="836" y2="306" class="rack-ln"/>
-<line x1="814" y1="323" x2="836" y2="323" class="rack-ln"/>
-<line x1="814" y1="340" x2="836" y2="340" class="rack-ln"/>
-<line x1="814" y1="357" x2="836" y2="357" class="rack-ln"/>
-<rect x="860" y="260" width="34" height="110" class="rack"/>
-<line x1="866" y1="272" x2="888" y2="272" class="rack-ln"/>
-<line x1="866" y1="289" x2="888" y2="289" class="rack-ln"/>
-<line x1="866" y1="306" x2="888" y2="306" class="rack-ln"/>
-<line x1="866" y1="323" x2="888" y2="323" class="rack-ln"/>
-<line x1="866" y1="340" x2="888" y2="340" class="rack-ln"/>
-<line x1="866" y1="357" x2="888" y2="357" class="rack-ln"/>
-<rect x="1000" y="314" width="66" height="56" class="chiller"/>
-<circle cx="1018" cy="332" r="11" class="fan"/><circle cx="1048" cy="332" r="11" class="fan"/>
-<rect x="1080" y="314" width="66" height="56" class="chiller"/>
-<circle cx="1098" cy="332" r="11" class="fan"/><circle cx="1128" cy="332" r="11" class="fan"/>
-<path d="M357 252 V230 H1113 V310" class="loop"/>
-<path d="M1033 310 V242 H900" class="loop loop-ret"/>
-<line x1="1160" y1="370" x2="1160" y2="434" class="well"/><rect x="1152" y="356" width="16" height="14" class="chiller"/>
-<line x1="140" y1="330" x2="300" y2="330" class="dim" marker-start="url(#ar)" marker-end="url(#ar)"/>
-<text x="220.0" y="320" class="lbl lbl-hv" text-anchor="middle">200+ FT</text>
-<polyline points="420,170 420,66 440,66" class="leader"/>
-<circle cx="420" cy="170" r="3.5" class="fill-hv"/>
-<text x="446" y="60" class="lbl lbl-hv" text-anchor="start">EXISTING 1940s BUILDING</text>
-<text x="446" y="76" class="lbl" text-anchor="start">nothing new built</text>
-<polyline points="700,310 700,106 720,106" class="leader"/>
-<circle cx="700" cy="310" r="3.5" class="fill-hv"/>
-<text x="726" y="100" class="lbl lbl-hv" text-anchor="start">COMPUTERS INDOORS</text>
-<text x="726" y="116" class="lbl" text-anchor="start">quiet, enclosed</text>
-<polyline points="1050,230 1050,46 870,46" class="leader"/>
-<circle cx="1050" cy="230" r="3.5" class="fill-hv"/>
-<text x="864" y="40" class="lbl lbl-hv" text-anchor="end">CLOSED WATER LOOP</text>
-<text x="864" y="56" class="lbl" text-anchor="end">filled once, then recirculates</text>
-<polyline points="1160,356 1160,106 1180,106" class="leader"/>
-<circle cx="1160" cy="356" r="3.5" class="fill-hv"/>
-<text x="1174" y="100" class="lbl lbl-hv" text-anchor="end">ON-SITE WELL</text>
-<text x="1174" y="116" class="lbl" text-anchor="end">not city water</text>
-<text x="1046" y="400" class="lbl" text-anchor="middle">LOW-NOISE CHILLERS</text>
-<text x="630" y="400" class="lbl" text-anchor="middle">NO GENERATORS OR TURBINES RUNNING DAY TO DAY</text>
-</svg></div>
-  </div>
-</section>
-
-<section class="sec" id="numbers">
-  <div class="wrap">
-    <div class="sec-head">
-      <p class="mono">The numbers</p>
-      <h2>What it takes from Riverbank.</h2>
-    </div>
-    <div class="zeros">
-      <div><span class="n">0</span><span class="u">Gallons of city water</span><p>The cooling loop is filled once from existing non-drinkable on-site wells. Those wells aren't connected to the city system.</p></div>
-      <div><span class="n">0</span><span class="u">New buildings</span><p>All equipment goes inside existing industrial buildings, more than 200 ft from the street.</p></div>
-      <div><span class="n">0</span><span class="u">Generators running</span><p>No diesel generators or gas turbines run for day-to-day power. Low-noise chillers stay below existing industrial limits.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="sec money" id="benefits">
-  <div class="wrap">
-    <div class="sec-head">
-      <p class="mono">Expected local impact</p>
-      <h2>What it gives back.</h2>
-      <p>Property tax pays for schools, fire protection, libraries, parks, and local government. The assumptions behind these estimates are in the commitments PDF.</p>
-    </div>
-    <div class="zeros">
-      <div><span class="n">$10M+</span><span class="u">Property tax per year</span><p>New revenue for Stanislaus County and Riverbank.</p></div>
-      <div><span class="n">$5M+</span><span class="u">To local schools</span><p>That share goes to local schools every year.</p></div>
-      <div><span class="n">100s</span><span class="u">Construction jobs</span><p>Plus lasting local service jobs during operations.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="sec">
-  <div class="wrap">
-    <div class="sec-head">
-      <p class="mono">Scale</p>
-      <h2>Not a mega data center.</h2>
-      <p>The data centers in the news are new campuses of hundreds of megawatts. RTC is a medium-sized, modular facility and one of 37 tenants at the complex.</p>
-    </div>
-    <div class="versus">
-      <table>
-        <caption class="sr-only">Typical hyperscale campus compared with Riverbank Technology Center</caption>
-        <thead><tr><th scope="col" class="mono">&nbsp;</th><th scope="col" class="mono">Typical hyperscale campus</th><th scope="col" class="mono us-h">Riverbank Technology Center</th></tr></thead>
-        <tbody>
-          <tr><th scope="row">Land</th><td class="them">New buildings, often on farmland or open land</td><td class="us">Existing buildings on land already zoned industrial</td></tr>
-          <tr><th scope="row">Size</th><td class="them">Hundreds of megawatts across many buildings</td><td class="us">Medium-sized and modular</td></tr>
-          <tr><th scope="row">Cooling water</th><td class="them">Evaporative cooling can use millions of gallons a year</td><td class="us">Closed loop, filled once from on-site wells</td></tr>
-          <tr><th scope="row">Power</th><td class="them">Often needs new local generation or transmission</td><td class="us">Existing grid capacity built for the site's heavy industry</td></tr>
-          <tr><th scope="row">Generators</th><td class="them">Banks of diesel generators or gas turbines</td><td class="us">None running day to day</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</section>
-
-<section class="sec" id="commitments">
-  <div class="wrap">
-    <div class="sec-head">
-      <p class="mono">Responsible development</p>
-      <h2>Seven commitments you can check.</h2>
-      <p>Written for neighbors, Riverbank city leaders, and Stanislaus County officials. Each one names the proof.</p>
-    </div>
-    <ol class="commit">
-      <li><h3>Protect the local grid and electricity rates</h3><p>RTC uses existing transmission capacity and pays for any on-site utility upgrades it needs.</p><p class="proof"><span class="mono">Proof</span>Interconnection agreements and upgrade costs on file with the city.</p></li>
-      <li><h3>Use water responsibly</h3><p>No City of Riverbank water. The cooling loop gets a one-time fill of recycled, non-drinkable well water.</p><p class="proof"><span class="mono">Proof</span>Metered well-water use, published every year.</p></li>
-      <li><h3>Keep operations clean and quiet</h3><p>All equipment indoors, low-noise chillers, and no turbines or generators running day to day.</p><p class="proof"><span class="mono">Proof</span>Property-line noise readings, published.</p></li>
-      <li><h3>Design with neighbors in mind, on existing industrial land</h3><p>Existing buildings more than 200 ft from the street, on land already zoned industrial.</p><p class="proof"><span class="mono">Proof</span>Site plan on file with the city.</p></li>
-      <li><h3>Engage regularly with the community</h3><p>Regular public updates, and a named contact who answers every question.</p><p class="proof"><span class="mono">Proof</span>Meeting schedule and past Q&amp;A posted on this site.</p></li>
-      <li><h3>Explain community benefits clearly</h3><p>Plain-language figures on taxes, jobs, and local spending.</p><p class="proof"><span class="mono">Proof</span>Sources for every number listed in the commitments PDF.</p></li>
-      <li><h3>Follow through on our commitments</h3><p>A public report on each commitment every year.</p><p class="proof"><span class="mono">Proof</span>Annual reports posted on this site.</p></li>
-    </ol>
-    <div class="after"><a class="btn dark" href="assets/RTC-Responsible-Development-Commitments.pdf">Download the full commitments</a></div>
-  </div>
-</section>
-
-<section class="sec" id="site">
-  <div class="wrap">
-    <div class="sec-head">
-      <p class="mono">The site</p>
-      <h2>Inside the Riverbank Industrial Complex.</h2>
-      <p>The complex once housed an aluminum smelter and U.S. Army ammunition casing production. Aemetis has been its master developer since 2022.</p>
-    </div>
-    <figure class="photo wide">
-      <img src="img/aerial.jpg" alt="Aerial view of the Riverbank Industrial Complex: long industrial buildings, rail spurs, and parking, with farmland beyond" width="2000" height="1120" loading="lazy">
-      <figcaption class="mono">The Riverbank Industrial Complex today</figcaption>
-    </figure>
-    <div class="site-grid">
-      <div>
-        <dl class="facts-list">
-          <div><dt class="mono">Buildings</dt><dd>Existing industrial buildings. No new structures for computing.</dd></div>
-          <div><dt class="mono">Setback</dt><dd>All equipment more than 200 ft from the street.</dd></div>
-          <div><dt class="mono">Zoning</dt><dd>Already industrial. No farmland or housing land.</dd></div>
-          <div><dt class="mono">Neighbors</dt><dd>One of 37 tenants at the complex.</dd></div>
-          <div><dt class="mono">Address</dt><dd>5300 Claus Rd, Riverbank, CA 95367</dd></div>
-        </dl>
-        <a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=5300+Claus+Rd+Riverbank+CA+95367">Open in Google Maps &rarr;</a>
-      </div>
-      <figure class="photo">
-        <img src="img/interior.jpg" alt="Interior of a large existing industrial building at the complex, with high ceilings and equipment on the floor" width="624" height="303" loading="lazy">
-        <figcaption class="mono">Inside one of the existing buildings. Computing equipment goes in spaces like this.</figcaption>
-      </figure>
-    </div>
-  </div>
-</section>
-
-<section class="sec" id="water-power">
-  <div class="wrap">
-    <div class="sec-head">
-      <p class="mono">How it runs</p>
-      <h2>Water and power.</h2>
-    </div>
-    <div class="wp">
-      <div>
-        <h3>Water</h3>
-        <ul>
-          <li>Closed loop with air-cooled chillers. The same water recirculates.</li>
-          <li>One-time fill from existing on-site wells. The water is recycled and non-drinkable.</li>
-          <li>No City of Riverbank drinking water, and no agricultural water.</li>
-          <li>The fill is about what a few homes use in a year.</li>
+<main class="wrap">
+  <div class="grid">
+    <article class="card">
+      <a class="shot" href="previews/a-civic/"><img src="previews/thumbs/a-civic.jpg" alt="Screenshot of preview A, Civic" width="960" height="600"></a>
+      <div class="body">
+        <h2><span class="letter" style="background:#1f5f5b">A</span>Civic</h2>
+        <p class="feel">Calm, trustworthy, public-agency feel</p>
+        <div class="swatches" aria-hidden="true"><i style="background:#1f5f5b"></i><i style="background:#e8c98f"></i><i style="background:#b5562f"></i><i style="background:#fbf8f2"></i></div>
+        <p class="desc">Reads like a well-run city information page. A status banner sits above everything, and soft cards answer the four questions neighbors ask first.</p>
+        <ul class="points">
+          <li>Serif headlines (Fraunces) with Inter body text</li>
+          <li>"Questions neighbors ask first" cards</li>
+          <li>Site-plan diagram with the 200 ft setback</li>
         </ul>
+        <div class="actions"><a class="btn" href="previews/a-civic/">Open preview &rarr;</a></div>
       </div>
-      <div>
-        <h3>Power</h3>
-        <ul>
-          <li>Sourced from outside the Riverbank area, including renewable hydroelectric.</li>
-          <li>Uses grid and transmission capacity built for the site's former heavy industry.</li>
-          <li>RTC pays for any on-site upgrades. Ratepayers and taxpayers don't.</li>
-          <li>No gas turbines or diesel generators running day to day.</li>
+    </article>
+
+    <article class="card">
+      <a class="shot" href="previews/b-industrial/"><img src="previews/thumbs/b-industrial.jpg" alt="Screenshot of preview B, Industrial" width="960" height="600"></a>
+      <div class="body">
+        <h2><span class="letter" style="background:#141d23">B</span>Industrial</h2>
+        <p class="feel">Bold, technical, spec-sheet feel</p>
+        <div class="swatches" aria-hidden="true"><i style="background:#141d23"></i><i style="background:#f2c21b"></i><i style="background:#24639f"></i><i style="background:#f3f4f0"></i></div>
+        <p class="desc">Takes its look from the 1940s plant itself: sawtooth roofs, technical linework, and safety-yellow markings. The hero is a cutaway drawing of the building.</p>
+        <ul class="points">
+          <li>Condensed display type, mono labels</li>
+          <li>Hero cutaway: racks, loop, chillers, well</li>
+          <li>Ruled ledgers instead of cards</li>
         </ul>
+        <div class="actions"><a class="btn" href="previews/b-industrial/">Open preview &rarr;</a></div>
       </div>
-    </div>
-  </div>
-</section>
+    </article>
 
-<section class="sec" id="process">
-  <div class="wrap">
-    <div class="sec-head">
-      <p class="mono">Public process</p>
-      <h2>Where things stand.</h2>
-      <p>Riverbank's City Council is reviewing data center proposals. Every step ahead includes a chance for residents to weigh in.</p>
-    </div>
-    <ol class="steps">
-      <li class="done"><span class="mono">2022</span><h3>Aemetis becomes master developer</h3></li>
-      <li class="done"><span class="mono">2026</span><h3>Proposal and commitments published</h3></li>
-      <li class="now"><span class="mono">Now</span><h3>City Council review</h3><p>Watch city agendas for public comment.</p></li>
-      <li><span class="mono">Next</span><h3>Community meetings and environmental review</h3></li>
-      <li><span class="mono">Later</span><h3>Permits, then construction</h3></li>
-      <li><span class="mono">Ongoing</span><h3>Operations and annual reports</h3></li>
-    </ol>
-  </div>
-</section>
-
-<section class="sec">
-  <div class="wrap">
-    <div class="sec-head">
-      <p class="mono">Rooted in Riverbank</p>
-      <h2>Here before this project.</h2>
-      <p>Aemetis has supported local events, education, and families in Riverbank for years.</p>
-    </div>
-    <div class="events">
-      <figure class="photo"><img src="img/fourth-of-july.jpg" alt="Families at a Fourth of July celebration in a Riverbank park, with red, white, and blue balloons" width="1000" height="754" loading="lazy"><figcaption><b>Fourth of July</b><span class="mono">Community celebration</span></figcaption></figure>
-      <figure class="photo"><img src="img/united-we-float.jpg" alt="Aemetis staff and community members with donated life jackets for United We Float" width="674" height="900" loading="lazy"><figcaption><b>United We Float</b><span class="mono">Life jacket donations</span></figcaption></figure>
-      <figure class="photo"><img src="img/bike-ride.jpg" alt="Children and families riding bikes down a Riverbank street" width="677" height="900" loading="lazy"><figcaption><b>Community Bike Ride</b><span class="mono">Families &amp; kids</span></figcaption></figure>
-      <figure class="photo"><img src="img/police-bikes.jpg" alt="Riverbank Police Services officers with donated children's bikes" width="272" height="363" loading="lazy"><figcaption><b>Police Partnership</b><span class="mono">Bikes for local kids</span></figcaption></figure>
-    </div>
-  </div>
-</section>
-
-<section class="sec" id="faq">
-  <div class="wrap">
-    <div class="sec-head">
-      <p class="mono">FAQ</p>
-      <h2>Straight answers.</h2>
-    </div>
-    <div class="body-col">
-      <div class="faq-grid">
-        <details><summary>Didn't the city pause data center projects?</summary><p>Yes. In September 2026 the City Council adopted a temporary moratorium to study data center proposals. We support a careful review and have published our commitments so the Council and residents can judge this project on its specifics.</p></details>
-        <details><summary>How much water will it use, and where does it come from?</summary><p>The closed cooling loop gets a one-time fill of recycled, non-drinkable water from existing on-site wells that aren't connected to Riverbank's municipal system. After that the water recirculates. There's no continuous draw for cooling.</p></details>
-        <details><summary>Will my electricity rates go up?</summary><p>RTC uses transmission capacity already built for the site's former heavy industry and pays for any on-site upgrades it needs. It doesn't ask ratepayers or taxpayers to fund new capacity.</p></details>
-        <details><summary>How loud will it be?</summary><p>All computing equipment is indoors, more than 200 ft from the street. The chillers are low-noise, and no turbines or generators run day to day. Noise stays below the levels already allowed in this industrial zone.</p></details>
-        <details><summary>What is a "Sustainable Computing Facility"?</summary><p>Our name for a computing facility that meets five standards: no continuous cooling water, power from existing grid capacity, reuse of existing buildings, industrial rather than agricultural land, and recurring local tax revenue.</p></details>
-        <details><summary>Why Riverbank?</summary><p>The complex already has large industrial buildings, industrial zoning, and underused grid connections. Using them avoids building on farmland or land that could be used for housing.</p></details>
-        <details><summary>Who are Aemetis and Spartan?</summary><p>Aemetis produces renewable fuels and low-carbon energy and has been master developer of the Riverbank Industrial Complex since 2022. Spartan designs and delivers modular computing facilities.</p></details>
+    <article class="card">
+      <a class="shot" href="previews/c-hometown/"><img src="previews/thumbs/c-hometown.jpg" alt="Screenshot of preview C, Hometown" width="960" height="600"></a>
+      <div class="body">
+        <h2><span class="letter" style="background:#e08a3c">C</span>Hometown</h2>
+        <p class="feel">Warm, photo-led, neighborly feel</p>
+        <div class="swatches" aria-hidden="true"><i style="background:#2c432e"></i><i style="background:#e08a3c"></i><i style="background:#2f6f8f"></i><i style="background:#faf6ee"></i></div>
+        <p class="desc">Opens with a full-bleed aerial of the complex and speaks in a friendly, conversational voice. It puts "what it takes" next to "what it gives" and ends on a community photo mosaic.</p>
+        <ul class="points">
+          <li>DM Serif Display with DM Sans body text</li>
+          <li>Animated closed-loop cooling diagram</li>
+          <li>"The old plant" history story</li>
+        </ul>
+        <div class="actions"><a class="btn" href="previews/c-hometown/">Open preview &rarr;</a></div>
       </div>
-      <p class="faq-more">Have a question that isn't here? <a href="#contact">Ask us</a> and we'll add the answer.</p>
-    </div>
+    </article>
   </div>
-</section>
 
-<section class="sec contact" id="contact">
-  <div class="wrap">
-    <h2>Ask us anything.</h2>
-    <div class="contact-row">
-      <div><h3>Neighbors</h3><p>Project questions, education programs, local events.</p><a class="btn dark" href="mailto:Community@aemetis.com?subject=RTC%20community%20question">Email a question</a></div>
-      <div><h3>Business &amp; partners</h3><p>Partnership and site inquiries.</p><a class="btn dark" href="mailto:Community@aemetis.com?subject=RTC%20partnership%20inquiry">Contact us</a></div>
-      <div><h3>Updates</h3><p>Meetings, milestones, and annual reports.</p><a class="btn dark" href="mailto:Community@aemetis.com?subject=Add%20me%20to%20RTC%20updates">Join the list</a></div>
+  <section class="notes">
+    <div>
+      <h3>Same content in every version</h3>
+      <p>All three use the same verified copy and photos, so the choice is about look and tone only. The reasoning behind the content is in <a href="REDESIGN.md">REDESIGN.md</a>.</p>
     </div>
-    <p class="addr mono"><span><a href="mailto:Community@aemetis.com">Community@aemetis.com</a></span><span>5300 Claus Rd, Riverbank, CA 95367</span></p>
-  </div>
-</section>
+    <div>
+      <h3>Still needed before launch</h3>
+      <ul>
+        <li>The commitments PDF (the links point to <code>assets/RTC-Responsible-Development-Commitments.pdf</code>)</li>
+        <li>The official site plan, plus a verified water figure and a dB number at the property line</li>
+        <li>Council and open-house dates for the timeline</li>
+      </ul>
+    </div>
+  </section>
 </main>
-
-<footer>
-  <div class="wrap">
-    <p><b>Riverbank Technology Center</b><br>A joint project of Aemetis &amp; Spartan</p>
-    <p>&copy; 2026 Riverbank Technology Center. Company names and marks are the property of their respective owners.</p>
-  </div>
-</footer>
 </body>
 </html>

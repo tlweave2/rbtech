@@ -42,4 +42,9 @@
 Drawn from the site itself: the 1940s sawtooth-roof plant buildings, technical-drawing linework, and safety-yellow floor-marking accents. Condensed industrial display type (Big Shoulders), Public Sans for body text, and IBM Plex Mono for labels and units. Content sits in ruled ledgers, the way a spec sheet lays it out, instead of a grid of cards. The hero is a cutaway drawing of the building showing the racks, the closed loop, the chillers, the well, and the 200 ft setback.
 
 ## Files
-- `index.html`: single self-contained page, no build step
+- `index.html`: preview hub that links to all three directions
+- `previews/a-civic/`: calm civic direction (Fraunces + Inter, teal and sand)
+- `previews/b-industrial/`: industrial spec-sheet direction (described above)
+- `previews/c-hometown/`: warm, photo-led hometown direction (DM Serif Display + DM Sans, olive and sunset orange)
+- `img/`: optimized photos shared by all previews
+- No build step. Every page is static HTML.
