@@ -67,7 +67,7 @@ h1, h2, h3 { margin: 0; text-wrap: balance; }
 /* hero */
 .hero { background: var(--band); color: var(--on-band); padding-block: clamp(40px, 6vw, 72px) 0; overflow: hidden; }
 .hero .status { color: var(--hv); display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
-.hero .status i { width: 9px; height: 9px; background: var(--hv); display: inline-block; animation: blink 2.4s steps(2) infinite; }
+.hero .status i { width: 9px; height: 9px; background: var(--hv); display: inline-block;  }
 @keyframes blink { 50% { opacity: .2; } }
 @media (prefers-reduced-motion: reduce) { .hero .status i { animation: none; } }
 .hero h1 { font: 900 clamp(3rem, 8.4vw, 7.4rem)/.9 var(--display); text-transform: uppercase; letter-spacing: -.005em; margin: 22px 0 26px; max-width: 13ch; }
@@ -96,7 +96,7 @@ h1, h2, h3 { margin: 0; text-wrap: balance; }
 .cutaway .rack-ln { stroke: var(--river); stroke-width: 1.5; }
 .cutaway .chiller { fill: var(--band); stroke: var(--on-band-2); stroke-width: 1.5; }
 .cutaway .fan { fill: none; stroke: var(--on-band-2); stroke-width: 1.2; }
-.cutaway .loop { fill: none; stroke: #6aa5de; stroke-width: 3; stroke-dasharray: 10 6; animation: flow 1.6s linear infinite; }
+.cutaway .loop { fill: none; stroke: #6aa5de; stroke-width: 3; stroke-dasharray: 10 6;  }
 .cutaway .loop-ret { animation-direction: reverse; opacity: .7; }
 @keyframes flow { to { stroke-dashoffset: -32; } }
 @media (prefers-reduced-motion: reduce) { .cutaway .loop { animation: none; } }
@@ -272,11 +272,11 @@ footer b { color: var(--on-band); font: 800 1.2rem var(--display); text-transfor
 <section class="hero" id="top">
   <div class="wrap">
     <p class="mono status"><i aria-hidden="true"></i> Riverbank Industrial Complex &middot; Riverbank, California</p>
-    <h1>Computing inside <em>existing buildings.</em></h1>
+    <h1>Computing inside existing buildings.</h1>
     <div class="hero-row">
       <p class="lede">Riverbank Technology Center is a joint project between Aemetis and Spartan, establishing the first Sustainable Computing Facility in the US inside existing buildings at the Riverbank Industrial Complex. <strong>No Riverbank city water. No strain on the local grid. No turbines or generators running.</strong></p>
       <div class="ctas">
-        <a class="btn" href="#numbers">Get the facts</a>
+        <a class="btn" href="#numbers">About the project</a>
         <a class="btn line" href="https://www.riverbanktc.com/assets/RTC-Responsible-Development-Commitments.pdf">Commitments PDF</a>
       </div>
     </div>
@@ -411,7 +411,7 @@ footer b { color: var(--on-band); font: 800 1.2rem var(--display); text-transfor
   <div class="wrap">
     <div class="sec-head">
       <p class="mono">The numbers</p>
-      <h2>The project at a glance.</h2>
+      <h2>The project.</h2>
     </div>
     <div class="zeros">
       <div><span class="n">0</span><span class="u">Continuous water usage for cooling</span><p>A closed-loop system needs a one-time charge of recycled, non-drinkable industrial water from existing on-site wells. No City of Riverbank drinking water is used.</p></div>
@@ -425,7 +425,7 @@ footer b { color: var(--on-band); font: 800 1.2rem var(--display); text-transfor
   <div class="wrap">
     <div class="sec-head">
       <p class="mono">Expected local impact</p>
-      <h2>What it gives back.</h2>
+      <h2>Expected local impact.</h2>
       <p>Meaningful, sustained property tax revenue that funds schools, local governments, fire protection, libraries, and parks.</p>
     </div>
     <div class="zeros">
@@ -573,7 +573,7 @@ footer b { color: var(--on-band); font: 800 1.2rem var(--display); text-transfor
   <div class="wrap">
     <div class="sec-head">
       <p class="mono">FAQ</p>
-      <h2>Straight answers.</h2>
+      <h2>Frequently asked questions.</h2>
     </div>
     <div class="body-col">
       <div class="faq-grid">
