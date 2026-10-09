@@ -33,8 +33,8 @@
 - **Capacity (MW) isn't stated anywhere.** Trackers already list 60 MW, so it's better to say it yourselves.
 
 ## Assets needed
-- An aerial photo of the existing buildings (hero) and the real site plan (to replace the schematic)
-- 4 community photos
+- The real site plan
+
 - The commitments PDF at `assets/RTC-Responsible-Development-Commitments.pdf`
 - Dates for council meetings and community open houses (for the timeline)
 
