@@ -38,6 +38,8 @@
 - The commitments PDF at `assets/RTC-Responsible-Development-Commitments.pdf`
 - Dates for council meetings and community open houses (for the timeline)
 
+## Visual direction
+Drawn from the site itself: the 1940s sawtooth-roof plant buildings, technical-drawing linework, and safety-yellow floor-marking accents. Condensed industrial display type (Big Shoulders), Public Sans for body text, and IBM Plex Mono for labels and units. Content sits in ruled ledgers, the way a spec sheet lays it out, instead of a grid of cards. The hero is a cutaway drawing of the building showing the racks, the closed loop, the chillers, the well, and the 200 ft setback.
+
 ## Files
-- `index.html`: single-page redesign, no build step
-- `styles.css`: styles (responsive down to 360px, keyboard accessible, no JS dependency apart from the mobile menu)
+- `index.html`: single self-contained page, no build step
