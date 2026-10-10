@@ -1,4 +1,65 @@
-# Claims audit: previews vs. the current riverbanktc.com
+# Claims audit
+
+## Design C (selected): checked against the Responsible Development Commitments PDF
+
+**Source of truth:** `assets/RTC-Responsible-Development-Commitments.pdf` (Aemetis/Spartan, Sept 2026). Every factual statement on `previews/c-hometown/` traces to that PDF. Headings, button labels, question wording, and photo alt text are framing and are not claims. The "Read our commitments" links now open this copy of the PDF.
+
+| On the page | PDF source |
+|---|---|
+| Joint project by Aemetis and Spartan at the existing Riverbank Industrial Complex | Introduction |
+| Our first project built to the SCF standard; SCF is a second-generation approach defined by five criteria | Introduction; "What Is a Sustainable Computing Facility?" |
+| Zero continuous water usage for cooling; closed-loop systems, like a car radiator | SCF criterion 1; Commitment 2 |
+| Initial fill and maintenance water is minimal, about a typical community swimming pool | Commitment 2 |
+| Non-drinkable industrial water from on-site wells; no City of Riverbank utility water sourced or impacted | Commitment 2 and its Fast fact |
+| Power from the California grid outside Riverbank, drawing on hydroelectric and other sources | Commitment 1 |
+| Existing grid and transmission capacity built for the site's prior heavy industrial uses | Commitment 1 |
+| RTC pays for any utility upgrades the project requires, so it does not raise local electricity prices | Commitment 1 |
+| No reliance on large, loud generators or gas turbines for day-to-day power; future onsite power designed to minimize air-quality impact | Commitment 3 |
+| Low-noise chillers; noise below levels already allowed by the industrial setting | Commitment 3 |
+| Structures once housed an aluminum smelter and U.S. Army ammunition casings production; reuse, not new construction | Commitment 4 |
+| Zoned industrial rather than agricultural; no farmland converted | Commitment 4; SCF criterion 4 |
+| All computing equipment inside existing buildings, more than 200 feet from the street | Commitment 4 |
+| One of the more than 30 tenants; modular, medium-sized, not a mega data center | Commitment 4 |
+| Increased / new property tax revenue every year for schools, Stanislaus County, and the City of Riverbank | Commitment 6 (dollar amounts removed at the client's request) |
+| Property taxes fund schools, local governments, fire protection, libraries, and parks | SCF criterion 5 |
+| Hundreds of construction-related jobs (electricians, pipefitters, steelworkers, carpenters) plus longer-term jobs | Commitment 6 |
+| "Based on current project planning" | Commitment 6 |
+| Concern about water use, noise, pollution, and utility rates; SCF designed to address them directly | Our Approach |
+| Seven commitment titles; published to show the community, city leaders, and county officials how we will plan, build, and operate | Commitment headings; Introduction |
+| Aemetis: leading developer and producer of renewable fuels and low-carbon energy; part of Riverbank for many years supporting local events, education, and families; master developer since 2022; one of the largest property taxpayers in Stanislaus County | SCF intro; Commitments 5 and 7 |
+| Spartan: engineering and delivery experience to design and build modern, modular computing facilities | Introduction |
+| SCF designed to enable community-first development | page 2 |
+| "Whether you're a neighbor curious about the project or a business partner exploring an opportunity, we welcome the conversation." | Get in Touch |
+| 5300 Claus Rd, Riverbank, CA 95367 | Get in Touch |
+
+### Changed on design C because the PDF says something different from the old website
+| Old website wording | Now (per PDF) |
+|---|---|
+| Fill water "consistent with the annual needs of a few homes" | "about the quantity of a typical community swimming pool" |
+| "Recycled" well water | Non-drinkable industrial water from on-site wells ("recycled" is not in the PDF) |
+| "No agricultural water" | Removed (not in the PDF) |
+| "Renewable hydroelectric and other clean power" | "Hydroelectric and other sources" |
+| "Air-cooled" / "low-decibel" chillers | "Low-noise chillers" |
+| "No strain on the local grid", "not ratepayers or taxpayers", "onsite utility upgrades" | "RTC will pay for any utility upgrades the project requires, so it does not raise local electricity prices" |
+| "No turbines or generators running" | "No reliance on large, loud generators or gas turbines for day-to-day power" |
+| "All equipment" 200+ ft from the street | "All computing equipment" |
+| "One of 37 existing tenants" | "One of the more than 30 tenants" |
+| "Not ... land that could be used for housing" | Removed (the PDF mentions only farmland) |
+| "Built to house high-performance computing" | "Modern, modular computing facility" |
+| "The first Sustainable Computing Facility in the US" | "Our first project built to the SCF standard" |
+| Spartan "built for speed and reliability" | Removed (not in the PDF) |
+| "Built with a community, not just in it"; "Sustainability isn't an add-on"; "Investing in the future of Riverbank" | Replaced with PDF wording |
+| Commitment 4 "on existing industrial land" | "on industrial land" (PDF title) |
+| "Hundreds of construction jobs, plus lasting local service jobs" | The PDF's job list |
+
+### Not from the PDF (client decisions)
+- **Contact:** info@riverbanktc.com, the contact form, and the email sign-up were requested by the client. The PDF lists Community@Aemetis.com.
+- **Community photo titles:** Fourth of July, United We Float, Community Bike Ride, and Local Police Partnership come from the current website. The PDF only says Aemetis supports "local events, education and families".
+- **Tax figures:** the PDF gives "more than $10 million" a year, with "more than $6 million" for schools. The old website said $5M+ for schools. Per the client, the page shows no dollar amounts.
+
+---
+
+# Earlier audit: all previews vs. the current riverbanktc.com
 
 **Rule:** every factual claim in the four previews (A Civic, B Industrial, C Hometown, D Straight Answers) has to appear on the current riverbanktc.com homepage. Headings, button labels and question wording ("Will I hear it?") are framing, not claims. Every answer under them comes from the original.
 
