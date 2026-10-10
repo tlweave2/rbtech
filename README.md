@@ -33,3 +33,15 @@ All previews use the colors and type from the RTC social media flyer:
 | Muted text | `#516779` |
 
 Headings use Montserrat (800–900), and section labels use widely spaced Montserrat capitals. Body text is Inter. The header shows a text wordmark (RIVERBANK / TECHNOLOGY CENTER). Swap in the real RTC logo file once it is available. The footer has the flyer's blue and green wave band.
+
+## Selected design: C (Hometown)
+
+All contact on preview C goes to **info@riverbanktc.com**: the email link, the contact form, and the "Get project updates" sign-up.
+
+Both forms post to [FormSubmit](https://formsubmit.co), a free service that emails each submission, because GitHub Pages can't process forms itself. Before it goes live:
+
+1. **Activate the address.** The first time either form is submitted from the live site, FormSubmit emails an activation link to info@riverbanktc.com. Someone with access to that inbox has to click it. Submissions are not delivered until then.
+2. **Optional: hide the address.** After activation, FormSubmit provides a random alias. Replace `info@riverbanktc.com` in the two form `action` URLs with that alias so the address isn't in the page source.
+3. **Subscribers arrive as individual emails** with the subject "RTC website: new email subscriber". To send updates to them, copy them into a mailing tool such as Mailchimp. Or connect the sign-up form directly to that tool later.
+
+After either form is submitted, people see `previews/c-hometown/thanks.html`.

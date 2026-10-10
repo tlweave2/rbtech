@@ -66,6 +66,10 @@ Preview D is rebuilt from `design-source/Riverbank_TC_Redesign_Homepage_export.h
 ## Illustrations
 The setback and cooling-loop drawings are labeled "Simplified illustration, not to scale" and, where they show a layout, "not the actual site layout". Where things sit in them (for example, chillers drawn beside the building) is illustrative only.
 
+## Changed at the client's request (preview C, the selected design)
+- All contact goes to info@riverbanktc.com (the address on the RTC social media flyer) instead of Community@aemetis.com.
+- Preview C now has a contact form and a "Get project updates" email sign-up. Both send to info@riverbanktc.com.
+
 ## Removed at the client's request
 - The dollar figures for property tax ($10M+/yr, and the $5M+/yr for schools that is described as part of it). The previews now say "increased property tax revenue" with no amount.
 
