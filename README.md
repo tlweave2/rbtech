@@ -6,7 +6,7 @@ Four design directions for replacing https://www.riverbanktc.com/. All four use 
 |---|---|---|
 | A | Civic: calm, public-agency feel | [`previews/a-civic/`](previews/a-civic/index.html) |
 | B | Industrial: bold, technical spec-sheet | [`previews/b-industrial/`](previews/b-industrial/index.html) |
-| C | Hometown: warm, photo-led, neighborly | [`previews/c-hometown/`](previews/c-hometown/index.html) |
+| C | Hometown: warm, photo-led, neighborly | [the homepage (`index.html`)](index.htmlindex.html) |
 | D | Straight Answers: question-led, based on the uploaded design | [`previews/d-straight-answers/`](previews/d-straight-answers/index.html) |
 
 `index.html` at the root is the hub page that links to all four. `design-source/` holds the original exported design file that D is based on. It is for reference only and was not claim-checked.
@@ -44,4 +44,4 @@ Both forms post to [FormSubmit](https://formsubmit.co), a free service that emai
 2. **Optional: hide the address.** After activation, FormSubmit provides a random alias. Replace `info@riverbanktc.com` in the two form `action` URLs with that alias so the address isn't in the page source.
 3. **Subscribers arrive as individual emails** with the subject "RTC website: new email subscriber". To send updates to them, copy them into a mailing tool such as Mailchimp. Or connect the sign-up form directly to that tool later.
 
-After either form is submitted, people see `previews/c-hometown/thanks.html`.
+After either form is submitted, people see `thanks.html`.

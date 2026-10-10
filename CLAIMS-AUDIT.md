@@ -2,7 +2,7 @@
 
 ## Design C (selected): checked against the Responsible Development Commitments PDF
 
-**Source of truth:** `assets/RTC-Responsible-Development-Commitments.pdf` (Aemetis/Spartan, Sept 2026). Every factual statement on `previews/c-hometown/` traces to that PDF. Headings, button labels, question wording, and photo alt text are framing and are not claims. The "Read our commitments" links now open this copy of the PDF.
+**Source of truth:** `assets/RTC-Responsible-Development-Commitments.pdf` (Aemetis/Spartan, Sept 2026). Every factual statement on the homepage (`index.html`) traces to that PDF. Headings, button labels, question wording, and photo alt text are framing and are not claims. The "Read our commitments" links now open this copy of the PDF.
 
 | On the page | PDF source |
 |---|---|

@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RTC Redesign Previews</title>
+<meta name="description" content="Four design directions for the riverbanktc.com redesign. Pick one to replace the current site.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+:root {
+  --bg: #f4f8fb; --card: #fff; --ink: #0b2842; --ink-2: #516779; --rule: #d6e1ea; --accent: #3e7a1c;
+  --sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #0a1a2b; --card: #13293f; --ink: #e9f0f6; --ink-2: #a3b6c6; --rule: #22394f; --accent: #8cc66a; color-scheme: dark;
+} }
+:root[data-theme="dark"] {
+  --bg: #0a1a2b; --card: #13293f; --ink: #e9f0f6; --ink-2: #a3b6c6; --rule: #22394f; --accent: #8cc66a; color-scheme: dark;
+}
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 16px/1.6 var(--sans); -webkit-font-smoothing: antialiased; }
+a { color: var(--accent); }
+.wrap { width: min(1200px, 100% - 32px); margin-inline: auto; }
+header { padding: clamp(40px, 7vw, 80px) 0 32px; }
+.tag { font-family: "Montserrat", sans-serif; font-size: .76rem; font-weight: 700; letter-spacing: .24em; text-transform: uppercase; color: var(--accent); margin: 0 0 12px; }
+h1 { font: 800 clamp(2rem, 4.5vw, 3rem)/1.08 "Montserrat", sans-serif; letter-spacing: -.02em; margin: 0 0 14px; }
+.lede { max-width: 64ch; color: var(--ink-2); font-size: 1.08rem; margin: 0; }
+.cur { display: inline-flex; gap: 6px; align-items: center; margin-top: 18px; font-size: .92rem; color: var(--ink-2); }
+.grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; padding-bottom: 40px; }
+@media (max-width: 1000px) { .grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 660px) { .grid { grid-template-columns: 1fr; } }
+.card { background: var(--card); border: 1px solid var(--rule); border-radius: 16px; overflow: hidden; display: flex; flex-direction: column; transition: transform .18s, box-shadow .18s; }
+
+.shot { display: block; aspect-ratio: 16 / 10; overflow: hidden; border-bottom: 1px solid var(--rule); background: var(--rule); }
+.shot img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+.body { padding: 20px 22px 22px; display: flex; flex-direction: column; flex: 1; }
+.chosen { margin-left: 10px; font: 700 .7rem/1 "Montserrat", sans-serif; letter-spacing: .14em; text-transform: uppercase; background: #4c9225; color: #fff; padding: 6px 9px; border-radius: 999px; }
+.letter { display: inline-grid; place-items: center; width: 30px; height: 30px; border-radius: 8px; font-weight: 700; color: #fff; margin-right: 10px; font-size: .95rem; }
+h2 { display: flex; align-items: center; font: 800 1.2rem/1.2 "Montserrat", sans-serif; margin: 0 0 4px; }
+.feel { font-size: .85rem; font-weight: 600; color: var(--ink-2); margin: 0 0 12px; }
+.body p.desc { color: var(--ink-2); font-size: .95rem; margin: 0 0 14px; }
+.swatches { display: flex; gap: 6px; margin: 0 0 14px; }
+.swatches i { width: 22px; height: 22px; border-radius: 50%; border: 1px solid rgba(0,0,0,.12); }
+.points { list-style: none; padding: 0; margin: 0 0 18px; font-size: .9rem; }
+.points li { padding: 5px 0 5px 20px; position: relative; border-top: 1px solid var(--rule); }
+.points li::before { content: ""; position: absolute; left: 2px; top: 13px; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+.actions { margin-top: auto; display: flex; gap: 10px; flex-wrap: wrap; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; padding: .7em 1.15em; border-radius: 999px; font-weight: 600; font-size: .93rem; text-decoration: none; background: var(--ink); color: var(--bg); }
+.btn.ghost { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 1.5px var(--rule); }
+.btn:hover { opacity: .88; }
+.notes { border-top: 1px solid var(--rule); padding: 32px 0 56px; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+.notes h3 { font-size: 1rem; margin: 0 0 8px; }
+.notes p, .notes li { color: var(--ink-2); font-size: .93rem; }
+.notes ul { padding-left: 18px; margin: 0; }
+@media (max-width: 760px) { .notes { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<header class="wrap">
+  <p class="tag">riverbanktc.com redesign</p>
+  <h1>Four directions for the new site</h1>
+  <p class="lede">Each preview is a full homepage with the same content, all taken from the current riverbanktc.com: plain answers on water, power, and noise, the Sustainable Computing Facility standard, the seven commitments, and the real site and community photos. No new claims were added. Only the look and layout change. Open each one, then pick the direction to build out.</p>
+  <p class="cur">All four use the RTC brand colors and type from the social media flyer. Compare with the current site: <a href="https://www.riverbanktc.com/" target="_blank" rel="noopener">riverbanktc.com &nearr;</a></p>
+</header>
+
+<main class="wrap">
+  <div class="grid">
+    <article class="card">
+      <a class="shot" href="a-civic/"><img src="thumbs/a-civic.jpg?v=20261010b" alt="Screenshot of preview A, Civic" width="960" height="600"></a>
+      <div class="body">
+        <h2><span class="letter" style="background:#0b2842">A</span>Civic</h2>
+        <p class="feel">Calm, trustworthy, public-agency feel</p>
+        <div class="swatches" aria-hidden="true"><i style="background:#0b2842"></i><i style="background:#1586c2"></i><i style="background:#4c9225"></i><i style="background:#f4f8fb"></i></div>
+        <p class="desc">Reads like a well-run city information page, with soft cards that answer the four questions neighbors ask first.</p>
+        <ul class="points">
+          <li>Soft cards, light layout</li>
+          <li>"Questions neighbors ask first" cards</li>
+          <li>Simple setback illustration (200+ ft)</li>
+        </ul>
+        <div class="actions"><a class="btn" href="a-civic/">Open preview &rarr;</a></div>
+      </div>
+    </article>
+
+    <article class="card">
+      <a class="shot" href="b-industrial/"><img src="thumbs/b-industrial.jpg?v=20261010b" alt="Screenshot of preview B, Industrial" width="960" height="600"></a>
+      <div class="body">
+        <h2><span class="letter" style="background:#0b2842">B</span>Industrial</h2>
+        <p class="feel">Bold, technical, spec-sheet feel</p>
+        <div class="swatches" aria-hidden="true"><i style="background:#0b2842"></i><i style="background:#1586c2"></i><i style="background:#4c9225"></i><i style="background:#f4f8fb"></i></div>
+        <p class="desc">Technical look with a cutaway drawing and ruled lists. The hero is a simplified cutaway illustration of the facility.</p>
+        <ul class="points">
+          <li>Dark navy bands, technical labels</li>
+          <li>Hero cutaway illustration</li>
+          <li>Ruled ledgers instead of cards</li>
+        </ul>
+        <div class="actions"><a class="btn" href="b-industrial/">Open preview &rarr;</a></div>
+      </div>
+    </article>
+
+    <article class="card">
+      <a class="shot" href="../"><img src="thumbs/c-hometown.jpg?v=20261010b" alt="Screenshot of preview C, Hometown" width="960" height="600"></a>
+      <div class="body">
+        <h2><span class="letter" style="background:#0b2842">C</span>Hometown <span class="chosen">Live homepage</span></h2>
+        <p class="feel">Warm, photo-led, neighborly feel</p>
+        <div class="swatches" aria-hidden="true"><i style="background:#0b2842"></i><i style="background:#1586c2"></i><i style="background:#4c9225"></i><i style="background:#f4f8fb"></i></div>
+        <p class="desc">Opens with a full-bleed aerial of the complex, follows with large-type numbers, and ends on a community photo mosaic.</p>
+        <ul class="points">
+          <li>Full-width aerial photo hero</li>
+          <li>Closed-loop cooling illustration</li>
+          <li>Quick-answer bar under the hero</li>
+        </ul>
+        <div class="actions"><a class="btn" href="../">Open homepage &rarr;</a></div>
+      </div>
+    </article>
+    <article class="card">
+      <a class="shot" href="d-straight-answers/"><img src="thumbs/d-straight-answers.jpg?v=20261010b" alt="Screenshot of preview D, Straight Answers" width="960" height="600"></a>
+      <div class="body">
+        <h2><span class="letter" style="background:#0b2842">D</span>Straight Answers</h2>
+        <p class="feel">Clear, question-led, practical feel</p>
+        <div class="swatches" aria-hidden="true"><i style="background:#0b2842"></i><i style="background:#1586c2"></i><i style="background:#4c9225"></i><i style="background:#f4f8fb"></i></div>
+        <p class="desc">Built from the uploaded homepage design. Six question cards (water, bills, noise, air, land, size) come right after the hero, followed by a dark "how it works" band.</p>
+        <ul class="points">
+          <li>Based on the uploaded homepage design</li>
+          <li>Six "Your questions" answer cards</li>
+          <li>Stats strip under the hero</li>
+        </ul>
+        <div class="actions"><a class="btn" href="d-straight-answers/">Open preview &rarr;</a></div>
+      </div>
+    </article>
+  </div>
+
+  <section class="notes">
+    <div>
+      <h3>Same content in every version</h3>
+      <p>Design C (selected) has been checked line by line against the <a href="../assets/RTC-Responsible-Development-Commitments.pdf">Responsible Development Commitments PDF</a>. A, B, and D still use the older website wording. The full check is in <a href="../CLAIMS-AUDIT.md">CLAIMS-AUDIT.md</a>.</p>
+    </div>
+    <div>
+      <h3>Still needed before launch</h3>
+      <ul>
+        <li>PDF buttons link to the live PDF on riverbanktc.com. Copy it into this site if the domain changes.</li>
+        <li>Confirm the interior photo (Indoor-RIC) is from the Riverbank Industrial Complex. It is captioned that way.</li>
+      </ul>
+    </div>
+  </section>
+</main>
+</body>
+</html>
