@@ -54,7 +54,7 @@
 
 ### Not from the PDF (client decisions)
 - **Contact:** info@riverbanktc.com, the contact form, and the email sign-up were requested by the client. The PDF lists Community@Aemetis.com.
-- **Community photo titles:** Fourth of July, United We Float, Community Bike Ride, and Local Police Partnership come from the current website. The PDF only says Aemetis supports "local events, education and families".
+- **"Rooted in Riverbank" section:** taken word for word from the current riverbanktc.com, which the client confirmed as correct. It is company background, not a project claim. That covers the intro ("Long before this project, Aemetis has been part of Riverbank, supporting local events, education, and families. These moments are why we lead with community."), the four photo titles (Fourth of July, United We Float, Community Bike Ride, Local Police Partnership), and the site's photo descriptions, used as alt text.
 - **Tax figures:** the PDF gives "more than $10 million" a year, with "more than $6 million" for schools. The old website said $5M+ for schools. Per the client, the page shows no dollar amounts.
 
 ---
