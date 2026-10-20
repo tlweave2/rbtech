@@ -44,4 +44,13 @@ Both forms post to [FormSubmit](https://formsubmit.co), a free service that emai
 2. **Optional: hide the address.** After activation, FormSubmit provides a random alias. Replace `info@riverbanktc.com` in the two form `action` URLs with that alias so the address isn't in the page source.
 3. **Subscribers arrive as individual emails** with the subject "RTC website: new email subscriber". To send updates to them, copy them into a mailing tool such as Mailchimp. Or connect the sign-up form directly to that tool later.
 
-After either form is submitted, people see `thanks.html`.
+After either form is submitted, people see `project/thanks.html`.
+
+## Site structure
+
+| URL | Page |
+|---|---|
+| `/` | Community Resource Hub, the landing page |
+| `/resources/` | The same hub. This is where the town hall QR signs point, so keep it. |
+| `/project/` | Full project website (design C), with the contact form and sign-up |
+| `/previews/` | The four design directions, not linked from the live site |
